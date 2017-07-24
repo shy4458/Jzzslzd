@@ -1,0 +1,302 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/set_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@color/menu_bar_bgcolor"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RelativeLayout
+                    android:id="@+id/set_user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="40dp" >
+
+                    <TextView
+                        android:id="@+id/xm_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="姓        名："
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/xm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/xm_tv"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@id/xm_tv"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/xzqh_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/xm_tv"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="行政区划："
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/xzqh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/xm_tv"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/xzqh_tv"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@id/xzqh"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/ssxq_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/xzqh"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="所属辖区："
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/ssxq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/xzqh"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/ssxq_tv"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@id/ssxq"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/xtbb_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ssxq"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="系统版本："
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/xtbb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ssxq"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/xtbb_tv"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@id/xtbb"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/sjkbb_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/xtbb"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="数据库版本："
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/sjkbb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/xtbb"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/sjkbb_tv"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@id/sjkbb"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@color/gray" />
+                    <TextView
+                        android:id="@+id/dzkbb_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sjkbb"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="地址库版本："
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    
+                    <Button
+                        android:id="@+id/dzkbb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sjkbb"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/dzkbb_tv"
+                        android:text="20150408"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rykc_saomiao_btn_s2"
+                        android:textSize="25sp" />
+                    
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@id/dzkbb"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@color/gray" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/set_xxmm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="40dp" >
+
+                    <EditText
+                        android:id="@+id/jmm"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/input_bg"
+                        android:hint="请输入旧密码"
+                        android:inputType="textPassword"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:maxLength="10"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <EditText
+                        android:id="@+id/xmm"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/jmm"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/input_bg"
+                        android:hint="请输入新密码"
+                        android:layout_marginRight="20dp"
+                        android:inputType="textPassword"
+                        android:maxLength="10"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <EditText
+                        android:id="@+id/cfmm"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/xmm"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/input_bg"
+                        android:hint="请再次输入新密码"
+                        android:maxLength="10"
+                        android:layout_marginRight="20dp"
+                        android:inputType="textPassword"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/xgmm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cfmm"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/button_blue_b"
+                        android:text="确定"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

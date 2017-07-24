@@ -1,0 +1,1713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_bg"
+    tools:context=".syfw.Dj_Activity" >
+
+    <RelativeLayout
+        android:id="@+id/fwdj_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame_top" >
+
+        <ImageButton
+            android:id="@+id/fwdj_back"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:contentDescription="@string/back"
+            android:src="@drawable/button_back_b" />
+
+        <TextView
+            android:id="@+id/textView_fwdj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/fwdj"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fwdj_bottom"
+        android:layout_below="@id/fwdj_top"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/fwdj_fangwujibenxinxi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/form_title"
+                android:drawableLeft="@drawable/ryhc_icon_word"
+                android:drawableRight="@drawable/rykc_input_down"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/fwBasicInfo"
+                android:textColor="@color/orange"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/fwdj_ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/fwdj_suoshuxiaqu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/suoshuxiaqu"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_select_suoshuxiaqu"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/tianbiaoriqi"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_tv_tianbiaoriqi"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:gravity="center_vertical"
+                        android:maxLength="10"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/fangwuleixing"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_select_fangwuleixing"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fwdj_ll_qitafangwuleixing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="@string/qitafangwuleixing"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/fwdj_qitafangwuleixing"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:maxLength="120"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left|center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="@string/fangwusuozaidizhi"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <EditText
+                            android:id="@+id/fwdj_et_fangwusuozaidizhi"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:inputType="textPostalAddress"
+                            android:maxLength="127"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/fwdj_auto_fangwusuozaidizhi"
+                            android:layout_width="400dp"
+                            android:layout_height="1dp"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="127"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/fangchanzhenghao"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/fwdj_et_fangchanzhenghao"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:inputType="text"
+                        android:maxLength="16"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fwdj_fangzhuxinxi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/form_title"
+                android:drawableLeft="@drawable/rycj_jt"
+                android:drawableRight="@drawable/rykc_input_down"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/fangzhuxinxi"
+                android:textColor="@color/orange"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/fwdj_ll2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/suoyouquanleixing"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_select_suoyouquanleixing"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/chuzurenleixing"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_select_chuzurenleixing"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fwdj_ll_gerenfangzhuxinxi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/form_title"
+                        android:gravity="center"
+                        android:text="产权人"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/fangzhuxingming"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_fangzhuxingming"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:inputType="textPersonName"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/zhengjianleixing"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/fwdj_select_zhengjianleixing"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fwdj_ll_qitazhengjian"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:text="@string/qitazhengjian"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_qitazhengjian"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="120"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/fwdj_tv_zhengjianhaoma"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/zhengjianhaoma"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_zhengjianhaoma"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:digits="0123456789xX"
+                            android:maxLength="18"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/lianxidianhua"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_lianxidianhua"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:inputType="phone"
+                            android:maxLength="16"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/xingbie"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/fwdj_select_xingbie"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/hujidi"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/fwdj_select_hujidi"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/zhengzhimianmao"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/fwdj_select_zhengzhimianmao"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/chushengriqi"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/fwdj_chushengriqi"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:gravity="center_vertical"
+                            android:maxLength="10"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fwdj_ll_guoji"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/guoji"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/fwdj_select_guoji"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fwdj_ll_danweifangzhuxinxi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/form_title"
+                        android:gravity="center"
+                        android:text="@string/danweifangzhuxinxi"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/danweimingcheng"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_danweimingcheng"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="120"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/fuzerenxingming"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_fuzerenxingming"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="16"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/fuzerenlianxidianhua"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_fuzerenlianxidianhua"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:inputType="phone"
+                            android:maxLength="16"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fwdj_ll_zhongjiegongsixinxi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/form_title"
+                        android:gravity="center"
+                        android:text="@string/zhongjiegongsixinxi"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/gongsimingcheng"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_gongsimingcheng"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="20"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="190dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/fangwufuzerenxingming"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_fangwufuzerenxingming"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="10"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/shenfenzhenghao"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_fuzerenzhengjianhaoma"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:digits="0123456789xX"
+                            android:maxLength="18"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="190dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/fuzerenlianxidianhua"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_fangwufuzerenlianxidianhua"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:inputType="phone"
+                            android:maxLength="18"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fwdj_ll_zhuanzurenxinxi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/form_title"
+                        android:gravity="center"
+                        android:text="个人二房东"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="姓名："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_zhuanzurenxingming"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="120"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/lianxidianhua"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_zhuanzurenlianxidianhua"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:inputType="phone"
+                            android:maxLength="16"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/zhengjianleixing"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/fwdj_select_zhuanzurenzhengjianleixing"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/fwdj_tv_zhuanzurenzhengjianhaoma"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/zhengjianhaoma"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_zhuanzurenzhengjianhaoma"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:digits="0123456789xX"
+                            android:maxLength="18"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fwdj_ll_zhuanzurenqitazhengjian"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:text="@string/qitazhengjian"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/fwdj_et_zhuanzurenqitazhengjian"
+                            android:layout_width="380dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="120"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fwdj_chuzuxinxi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/form_title"
+                android:drawableLeft="@drawable/fwhc_icon_fw"
+                android:drawableRight="@drawable/rykc_input_down"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/chuzuxinxi"
+                android:textColor="@color/orange"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/fwdj_ll3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/chuzujianshu"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/fwdj_et_chuzujianshu"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/jian"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/fwdj_et_pingfangmi"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/rykc_input_long"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/pingfangmi"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/fangwucengshu"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_select_fangwucengshu"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_short"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/ceng"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="管理类型："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <RadioGroup
+                            android:id="@+id/fwdj_rg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                           <RadioButton
+                                android:id="@+id/anquanfangxin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="安全放心"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <RadioButton
+                                android:id="@+id/yanguanyankong"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="严管严控"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <RadioButton
+                                android:id="@+id/yangejinzhi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="严格禁止"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fwdj_ll_anquanyinhuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="right"
+                        android:text="房屋隐患类型："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <CheckBox
+                            android:id="@+id/fwdj_cb_buwendingfengxian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/buwendingfengxian"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/fwdj_ll_buwendingfengxian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:orientation="vertical"
+                            android:visibility="gone" >
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/fwdj_cb_zhianyinhuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zhianyinhuan"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/fwdj_ll_zhianyinhuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:orientation="vertical"
+                            android:visibility="gone" >
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/fwdj_cb_xiaofangyinhuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/xiaofangyinhuan"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/fwdj_ll_xiaofangyinhuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:orientation="vertical"
+                            android:visibility="gone" >
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/fwdj_cb_qitaanquanyinhuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其它安全隐患"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/fwdj_ll_qitaanquanyinhuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:orientation="vertical"
+                            android:visibility="gone" >
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/chuzuyongtu"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_select_chuzuyongtu"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_short"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/zulinhetong"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_select_zulinhetong"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_short"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fwdj_ll_qitachuzuyongtu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="@string/qitachuzuyongtu"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/fwdj_et_qitachuzuyongtu"
+                        android:layout_width="380dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:maxLength="120"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/zuzhurenshu"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="@string/benshi"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <EditText
+                                android:id="@+id/fwdj_et_benshirenshu"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rykc_input_long"
+                                android:inputType="number"
+                                android:paddingLeft="10dp"
+                                android:singleLine="true"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="@string/ren"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="@string/waishengshi"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <EditText
+                                android:id="@+id/fwdj_et_waishengshirenshu"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rykc_input_long"
+                                android:inputType="number"
+                                android:paddingLeft="10dp"
+                                android:singleLine="true"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="@string/person"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="@string/gangaotai"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <EditText
+                                android:id="@+id/fwdj_et_gangaotairenshu"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rykc_input_long"
+                                android:inputType="number"
+                                android:paddingLeft="10dp"
+                                android:singleLine="true"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="@string/ren"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="@string/waiji"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <EditText
+                                android:id="@+id/fwdj_et_waijirenshu"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rykc_input_long"
+                                android:inputType="number"
+                                android:paddingLeft="10dp"
+                                android:singleLine="true"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="@string/person"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/zujin"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/yuezu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="@string/yuezu"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <RadioButton
+                                android:id="@+id/nianzu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nianzu"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </RadioGroup>
+
+                        <EditText
+                            android:id="@+id/fwdj_et_zujin"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:background="@drawable/rykc_input_long"
+                            android:inputType="number"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/yuan"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/nashui"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_select_nashui"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwcj_czxx_djba_t"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/dengjibeian"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_select_dengjibeian"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/qiandingzerenshu"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <CheckBox
+                            android:id="@+id/fwdj_cb_wu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wu"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/fwdj_cb_zhian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="@string/zhian"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/fwdj_cb_xiaofang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="@string/xiaofang"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/fwdj_cb_hunyu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="@string/hunyu"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="@string/qiandingzerenshuriqi"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_qiandingzerenshuriqi"
+                        android:layout_width="380dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:gravity="center_vertical"
+                        android:maxLength="10"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="@string/chuzuqishiriqi"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_tv_chuzuqishiriqi"
+                        android:layout_width="380dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:gravity="center_vertical"
+                        android:maxLength="10"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="@string/chuzujiezhiriqi"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fwdj_chuzujiezhiriqi"
+                        android:layout_width="380dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:gravity="center_vertical"
+                        android:maxLength="10"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/fwdj_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/fwdj_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_gray_b"
+            android:text="@string/reset"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/fwdj_tijiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_blue_b"
+            android:text="@string/tijiao"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</RelativeLayout>

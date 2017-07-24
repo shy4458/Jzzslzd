@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_bg" >
+
+    <RelativeLayout
+        android:id="@+id/fwhc_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame_top" >
+
+        <ImageButton
+            android:id="@+id/fwhc_back"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:contentDescription="@string/back"
+            android:src="@drawable/button_back_b" />
+
+        <TextView
+            android:id="@+id/fwhc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/fwhc"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fwhc_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/fwhc_top"
+        android:layout_marginTop="40dp" >
+
+        <TextView
+            android:id="@+id/fwhc_fzName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/fzName"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/editText_fwhc_fzName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwhc_fzName"
+            android:layout_alignBottom="@+id/fwhc_fzName"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="100dp"
+            android:layout_toRightOf="@+id/fwhc_fzName"
+            android:background="@drawable/input_big"
+            android:ems="10"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editText_fwhc_djNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwhc_djNumber"
+            android:layout_alignBottom="@+id/fwhc_djNumber"
+            android:layout_alignLeft="@+id/editText_fwhc_fzName"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/input_big"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/fwhc_djNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/fwhc_fzName"
+            android:layout_below="@+id/editText_fwhc_fzName"
+            android:layout_marginTop="68dp"
+            android:text="@string/djNumber"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/et_fwhc_dz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwhc_dz"
+            android:layout_alignBottom="@+id/fwhc_dz"
+            android:layout_alignLeft="@+id/editText_fwhc_djNumber"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/input_big"
+            android:ems="10"
+            android:singleLine="true"
+            android:inputType="none" />
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_fwhc_dz"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignBaseline="@+id/fwhc_dz"
+            android:layout_alignBottom="@+id/fwhc_dz"
+            android:layout_alignLeft="@+id/editText_fwhc_djNumber"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/input_big"
+            android:ems="10"
+            android:inputType="none" />
+
+        <TextView
+            android:id="@+id/fwhc_dz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/fwhc_djNumber"
+            android:layout_below="@+id/editText_fwhc_djNumber"
+            android:layout_marginTop="68dp"
+            android:text="房屋地址:"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:id="@+id/fwhc_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_fwhc_dz"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@+id/fwhc_dz"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/fwhc_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_gray_b"
+                android:text="@string/reset"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/fwhc_queding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_blue_b"
+                android:text="@string/queding"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_bg" >
+
+    <RelativeLayout
+        android:id="@+id/fwbc_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame_top" >
+
+        <ImageButton
+            android:id="@+id/fwbc_back"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:contentDescription="@string/back"
+            android:src="@drawable/button_back_b" />
+
+        <TextView
+            android:id="@+id/textView_fwbc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/fwbc"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/TextView_fwbc_fwInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fwbc_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/form_title"
+        android:drawableLeft="@drawable/fwhc_icon_fw"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        android:text="@string/fwInfo"
+        android:textColor="@color/orange"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:id="@+id/fwbc_fwInfo"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/TextView_fwbc_fwInfo"
+        android:layout_marginTop="10dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/fwbc_fzName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="100dp"
+            android:text="@string/fzName"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView_fwbc_fzName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwbc_fzName"
+            android:layout_alignBottom="@+id/fwbc_fzName"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/fwbc_fzName"
+            android:text=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fwbc_fwAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/fwbc_fzName"
+            android:layout_below="@+id/fwbc_fzName"
+            android:layout_marginTop="20dp"
+            android:text="@string/fwAddress"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView_fwbc_fwAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwbc_fwAddress"
+            android:layout_alignBottom="@+id/fwbc_fwAddress"
+            android:layout_alignLeft="@+id/TextView_fwbc_fzName"
+            android:text=""
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/TextView_fwbc_bcInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fwbc_fwInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/form_title"
+        android:drawableLeft="@drawable/fwhc_icon_bc"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        android:text="@string/bcInfo"
+        android:textColor="@color/orange"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:id="@+id/fwbc_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TextView_fwbc_bcInfo"
+        android:layout_marginTop="5dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/fwbc_syqlx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/syqlx"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView_fwbc_syqlx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwbc_syqlx"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/fwbc_syqlx"
+            
+            android:drawablePadding="50dp"
+           
+            android:paddingRight="15dp"
+            android:paddingTop="15dp"
+            android:text=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fwbc_ssxq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fwbc_czAction"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/textView_fwbc_syqlx"
+            android:text="@string/ssxq"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView_fwbc_ssxq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwbc_ssxq"
+           
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/fwbc_ssxq"
+            android:background="@drawable/input_big"
+            android:drawableRight="@drawable/rykc_input_down"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp"
+            android:text=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fwbc_czAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/fwbc_syqlx"
+            android:layout_below="@+id/fwbc_syqlx"
+            android:layout_marginTop="30dp"
+            android:text="@string/czAction"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView_fwbc_czAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwbc_czAction"
+            android:layout_alignLeft="@+id/textView_fwbc_syqlx"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/input_big"
+            android:drawableRight="@drawable/rykc_input_down"
+            android:paddingRight="15dp"
+            android:text=""
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/fwbc_czAction"
+            android:layout_below="@+id/fwbc_czAction"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/fwbc_syAction_containter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/fwbc_syAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/syyt"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView_fwbc_syAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/input_big"
+                    android:drawableRight="@drawable/rykc_input_down"
+                    android:paddingRight="15dp"
+                    android:text=""
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/fwbc_zpyl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/zpyl"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/imageView_fwbc_zpyl"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/photo_bg"
+                    android:contentDescription="@string/zpyl" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/fwzx_queding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/rykc_btn_blue_long_s"
+            android:text="@string/queding"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

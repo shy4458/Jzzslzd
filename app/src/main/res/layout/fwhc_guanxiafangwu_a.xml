@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_bg" >
+
+    <RelativeLayout
+        android:id="@+id/gxfw_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame_top" >
+
+        <ImageButton
+            android:id="@+id/gxfw_back"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:contentDescription="@string/back"
+            android:src="@drawable/button_back_b" />
+
+        <TextView
+            android:id="@+id/textView_gxfw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/gxfw"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/TextView_gxfw_fwBasicInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gxfw_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/form_title"
+        android:drawableLeft="@drawable/fwhc_icon_fw"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        android:text="@string/fwBasicInfo"
+        android:textColor="@color/orange"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:id="@+id/gxfw_jbInfo"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/TextView_gxfw_fwBasicInfo"
+        android:layout_marginTop="10dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/gxfw_fzName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="100dp"
+            android:text="@string/fzName"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView_gxfw_fzName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/gxfw_fzName"
+            android:layout_alignBottom="@+id/gxfw_fzName"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/gxfw_fzName"
+            android:text=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/gxfw_fwAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/gxfw_fzName"
+            android:layout_below="@+id/gxfw_fzName"
+            android:layout_marginTop="20dp"
+            android:text="@string/fwAddress"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView_gxfw_fwAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/gxfw_fwAddress"
+            android:layout_alignBottom="@+id/gxfw_fwAddress"
+            android:layout_alignLeft="@+id/TextView_gxfw_fzName"
+            android:text=""
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/TextView_gxfw_fwczInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gxfw_jbInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/form_title"
+        android:drawableLeft="@drawable/fwhc_icon_cz"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        android:text="@string/fwczInfo"
+        android:textColor="@color/orange"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:id="@+id/gxfw_fwczInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TextView_gxfw_fwczInfo"
+        android:layout_marginTop="10dp"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/gxfw_czAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="100dp"
+            android:text="@string/czAction"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView_gxfw_czAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/gxfw_czAction"
+            android:layout_alignBottom="@+id/gxfw_czAction"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/gxfw_czAction"
+            android:text=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/gxfw_czCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/gxfw_czAction"
+            android:layout_below="@+id/gxfw_czAction"
+            android:layout_marginTop="30dp"
+            android:text="@string/czCount"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView_gxfw_czCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/gxfw_czCount"
+            android:layout_alignBottom="@+id/gxfw_czCount"
+            android:layout_alignLeft="@+id/TextView_gxfw_czAction"
+            android:text=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/gxfw_czStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/gxfw_czCount"
+            android:layout_below="@+id/gxfw_czCount"
+            android:layout_marginTop="30dp"
+            android:text="@string/czStartDate"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView_gxfw_czStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/gxfw_czStartDate"
+            android:layout_alignBottom="@+id/gxfw_czStartDate"
+            android:layout_alignLeft="@+id/TextView_gxfw_czCount"
+            android:text=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/gxfw_czEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/gxfw_czCount"
+            android:layout_below="@+id/gxfw_czStartDate"
+            android:layout_marginTop="30dp"
+            android:text="@string/czEndDate"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView_gxfw_czEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/gxfw_czEndDate"
+            android:layout_alignBottom="@+id/gxfw_czEndDate"
+            android:layout_alignLeft="@+id/TextView_gxfw_czStartDate"
+            android:text=""
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/gxfw_zzPerson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/gxfw_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="150sp"
+            android:background="@drawable/rykc_btn_blue_long_s"
+            android:drawableLeft="@drawable/fwhc_fwxx_zzry_icon"
+            android:drawablePadding="10dp"
+            android:gravity="left"
+            android:paddingLeft="100dp"
+            android:paddingTop="5dp"
+            android:text="@string/fwzzPerson"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:id="@+id/gxfw_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="50dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/gxfw_zhuxiao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/rykc_saomiao_btn_s2"
+                android:text="@string/zhuxiao"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/gxfw_bucai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/rykc_saomiao_btn_s2"
+                android:text="@string/bucai"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/gxfw_xiugai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/rykc_saomiao_btn_s2"
+                android:text="@string/xiugai"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+  删除行：ctrl+Y;
+  复制行：ctrl+D;
+  格式化代码：ctrl+Alt+L;
+  生成代码： Alt+insert;(get,set,构造等方法)
+  替换文本：ctrl+R;
+  查找文本：ctrl+F;
+
+上下移动行：Alt+shift+up/down;
+语句补全：ctrl+shift+Enter;
+ 移动语句：crtl+shift+up/down;
+  提取方法：ctrl+Alt+M;
+  快捷生成局部变量：ctrl+Alt+V;
+  快捷生成成员变量：ctrl+Alt+F;
+  快捷生成常量：ctrl+Alt+C;
+  合并行和文本：ctrl+shift+J;
+  动态模板：ctrl+J;
+  包裹代码：ctrl+Alt+T;
+  移除包裹代码：ctrl+Alt+Delete;
+
+  标记：
+  1、添加/移除书签F11
+  2、添加/移除书签(带标记)crtl+F11
+  3、显示全部书签 shift+F11
+  4、跳转到标记 crtl+标记
+  隐藏面板 crtl+shift+F12
+
+

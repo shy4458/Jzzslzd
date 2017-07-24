@@ -1,0 +1,108 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* ic_launcher-web.png
+* proguard-project.txt
+* vssver2.scc
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+gson-2.1.jar => com.google.code.gson:gson:2.1
+guava-r09.jar => com.google.guava:guava:18.0
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.1.jar => version 2.1 in com.google.code.gson:gson:2.1
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets\
+* libs\adtl.android.jar => app\libs\adtl.android.jar
+* libs\annotations.jar => app\libs\annotations.jar
+* libs\AraBMApiDev.jar => app\libs\AraBMApiDev.jar
+* libs\AraBMApiFp.jar => app\libs\AraBMApiFp.jar
+* libs\AraBMApiIccard.jar => app\libs\AraBMApiIccard.jar
+* libs\AraBMApiIdcard.jar => app\libs\AraBMApiIdcard.jar
+* libs\AraBMApiQrc.jar => app\libs\AraBMApiQrc.jar
+* libs\armeabi\libAraBione.so => app\src\main\jniLibs\armeabi\libAraBione.so
+* libs\armeabi\libAraBioneWrapper.so => app\src\main\jniLibs\armeabi\libAraBioneWrapper.so
+* libs\armeabi\libAraBMApiDev.so => app\src\main\jniLibs\armeabi\libAraBMApiDev.so
+* libs\armeabi\libAraBMApiFp.so => app\src\main\jniLibs\armeabi\libAraBMApiFp.so
+* libs\armeabi\libAraBMApiFpAlgorithm.so => app\src\main\jniLibs\armeabi\libAraBMApiFpAlgorithm.so
+* libs\armeabi\libAraBMApiIccard.so => app\src\main\jniLibs\armeabi\libAraBMApiIccard.so
+* libs\armeabi\libAraBMApiIdcard.so => app\src\main\jniLibs\armeabi\libAraBMApiIdcard.so
+* libs\armeabi\libAraBMApiQrc.so => app\src\main\jniLibs\armeabi\libAraBMApiQrc.so
+* libs\armeabi\libdatabase_sqlcipher.so => app\src\main\jniLibs\armeabi\libdatabase_sqlcipher.so
+* libs\armeabi\libftrScanAPI.so => app\src\main\jniLibs\armeabi\libftrScanAPI.so
+* libs\armeabi\liblocSDK_2.4.so => app\src\main\jniLibs\armeabi\liblocSDK_2.4.so
+* libs\armeabi\libsqlcipher_android.so => app\src\main\jniLibs\armeabi\libsqlcipher_android.so
+* libs\armeabi\libstlport_shared.so => app\src\main\jniLibs\armeabi\libstlport_shared.so
+* libs\armeabi\libusb-1.0.so => app\src\main\jniLibs\armeabi\libusb-1.0.so
+* libs\armeabi\libwlt2bmp.so => app\src\main\jniLibs\armeabi\libwlt2bmp.so
+* libs\armeabi\libwltobmp.so => app\src\main\jniLibs\armeabi\libwltobmp.so
+* libs\armeabi\libWltRS.so => app\src\main\jniLibs\armeabi\libWltRS.so
+* libs\com.unisme.jar => app\libs\com.unisme.jar
+* libs\commons-codec.jar => app\libs\commons-codec.jar
+* libs\locSDK_2.6.jar => app\libs\locSDK_2.6.jar
+* libs\sqlcipher.jar => app\libs\sqlcipher.jar
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+* src\com\bksx\jzzslzd\bo\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\bo\vssver2.scc
+* src\com\bksx\jzzslzd\common\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\common\vssver2.scc
+* src\com\bksx\jzzslzd\gltz\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\gltz\vssver2.scc
+* src\com\bksx\jzzslzd\gztx\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\gztx\vssver2.scc
+* src\com\bksx\jzzslzd\ldrk\rybc\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\ldrk\rybc\vssver2.scc
+* src\com\bksx\jzzslzd\ldrk\rycj\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\ldrk\rycj\vssver2.scc
+* src\com\bksx\jzzslzd\ldrk\ryhc\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\ldrk\ryhc\vssver2.scc
+* src\com\bksx\jzzslzd\ldrk\rykc\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\ldrk\rykc\vssver2.scc
+* src\com\bksx\jzzslzd\ldrk\ryzc\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\ldrk\ryzc\vssver2.scc
+* src\com\bksx\jzzslzd\net\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\net\vssver2.scc
+* src\com\bksx\jzzslzd\service\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\service\vssver2.scc
+* src\com\bksx\jzzslzd\sjsb\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\sjsb\vssver2.scc
+* src\com\bksx\jzzslzd\syfw\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\syfw\vssver2.scc
+* src\com\bksx\jzzslzd\tools\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\tools\vssver2.scc
+* src\com\bksx\jzzslzd\tzgg\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\tzgg\vssver2.scc
+* src\com\bksx\jzzslzd\vssver2.scc => app\src\main\resources\com\bksx\jzzslzd\vssver2.scc
+* src\com\sx\mobile\gateway\vssver2.scc => app\src\main\resources\com\sx\mobile\gateway\vssver2.scc
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

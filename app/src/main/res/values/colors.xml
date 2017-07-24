@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="grity">#ff000000</color>
+    <color name="gainsboro">#dcdcdc</color>
+    <color name="grey">#5b5b5b</color>
+    <color name="gray">#808080</color>
+    <color name="dimgray">#696969</color>
+    <color name="darkgray">#2f4f4f</color>
+    <color name="viewcolor">#ffc0c3c4</color>
+    <color name="transparent">#00000000</color>
+    <color name="gold">#b89766</color>
+    <color name="black">#000000</color>
+    <color name="orange">#FF8c00</color>
+    <color name="blue">#1965d6</color>
+    <color name="yellow">#F8F177</color>
+    <color name="tabbgcolor">#363636</color>
+    <color name="menu_bar_bgcolor">#e6e6e6</color>
+    <color name="icon_bg">#cccccc</color>
+    <color name="sfzcolor">#00A8FF</color>
+
+</resources>

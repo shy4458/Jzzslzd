@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_bg" >
+
+    <RelativeLayout
+        android:id="@+id/rykc_renyuanheshi_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame_top" >
+
+        <ImageButton
+            android:id="@+id/rykc_renyuanheshi_back"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@drawable/button_back_b" />
+
+
+        <TextView
+            android:id="@+id/rykc_renyuanheshi_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="人员核实"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rykc_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/rykc_renyuanheshi_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/rykc_btn_blue_long_s"
+            android:text="核实"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rykc_bottom"
+        android:layout_below="@id/rykc_renyuanheshi_top"
+        android:paddingTop="50dp" >
+
+        <ImageView
+            android:id="@+id/rykc_touxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/rykc_touxiang" />
+
+        <EditText
+            android:id="@+id/rykc_et1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_toLeftOf="@id/rykc_touxiang"
+            android:background="@drawable/rykc_input_short"
+            android:maxLength="15"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/rykc_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rykc_et1"
+            android:layout_alignTop="@id/rykc_et1"
+            android:layout_toLeftOf="@id/rykc_et1"
+            android:gravity="center_vertical|right"
+            android:text="姓名："
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/rykc_et2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/rykc_touxiang"
+            android:layout_alignLeft="@+id/rykc_et1"
+            android:layout_below="@id/rykc_et1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rykc_input_short"
+            android:hint="无需输入"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/rykc_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rykc_et2"
+            android:layout_alignRight="@+id/rykc_tv1"
+            android:layout_alignTop="@id/rykc_et2"
+            android:layout_below="@id/rykc_tv1"
+            android:layout_toLeftOf="@id/rykc_et2"
+            android:gravity="center_vertical|right"
+            android:text="性别："
+            android:textSize="20sp" />
+
+        <!-- ............................................... -->
+
+        <TextView
+            android:id="@+id/rykc_et3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/rykc_et1"
+            android:layout_alignRight="@id/rykc_touxiang"
+            android:layout_below="@id/rykc_et2"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rykc_input_long"
+            android:clickable="true"
+            android:drawableRight="@drawable/rykc_input_down"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="汉族"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/rykc_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rykc_et3"
+            android:layout_alignRight="@id/rykc_tv2"
+            android:layout_alignTop="@id/rykc_et3"
+            android:layout_below="@id/rykc_tv2"
+            android:layout_toLeftOf="@id/rykc_et3"
+            android:gravity="center_vertical|right"
+            android:text="民族："
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/rykc_et4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/rykc_et1"
+            android:layout_alignRight="@+id/rykc_touxiang"
+            android:layout_below="@id/rykc_et3"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rykc_input_long"
+            android:maxLines="60"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/rykc_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rykc_et4"
+            android:layout_alignRight="@id/rykc_tv1"
+            android:layout_alignTop="@id/rykc_et4"
+            android:layout_below="@id/rykc_tv3"
+            android:layout_toLeftOf="@id/rykc_et4"
+            android:gravity="center_vertical|right"
+            android:text="户籍地址："
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/rykc_et5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/rykc_et1"
+            android:layout_alignRight="@+id/rykc_touxiang"
+            android:layout_below="@id/rykc_et4"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rykc_input_long"
+            android:hint="无需输入"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/rykc_tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rykc_et5"
+            android:layout_alignRight="@id/rykc_tv1"
+            android:layout_alignTop="@id/rykc_et5"
+            android:layout_below="@id/rykc_tv4"
+            android:layout_toLeftOf="@id/rykc_et5"
+            android:gravity="center_vertical|right"
+            android:text="出生日期："
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/rykc_et6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/rykc_et1"
+            android:layout_alignRight="@+id/rykc_touxiang"
+            android:layout_below="@id/rykc_et5"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rykc_input_long"
+            android:hint="输入后 自动填充性别、出生日期"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/rykc_tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rykc_et6"
+            android:layout_alignRight="@id/rykc_tv1"
+            android:layout_alignTop="@id/rykc_et6"
+            android:layout_below="@id/rykc_tv5"
+            android:layout_toLeftOf="@id/rykc_et6"
+            android:gravity="center_vertical|right"
+            android:text="身份证号码："
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/rykc_btn_kaiguan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/rykc_et1"
+            android:layout_below="@id/rykc_et6"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/checkbox" />
+
+        <TextView
+            android:id="@+id/rykc_tv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rykc_btn_kaiguan"
+            android:layout_alignTop="@id/rykc_btn_kaiguan"
+            android:layout_below="@id/rykc_tv6"
+            android:layout_toLeftOf="@id/rykc_btn_kaiguan"
+            android:gravity="center_vertical|right"
+            android:text="证件不能扫描："
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

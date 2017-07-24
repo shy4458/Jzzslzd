@@ -1,0 +1,1694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_bg">
+
+    <RelativeLayout
+        android:id="@+id/ryjc_dengji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame_top">
+
+        <ImageButton
+            android:id="@+id/ryjc_dengji_back"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@drawable/button_back_b" />
+
+        <TextView
+            android:id="@+id/ryjc_dengji_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="登记卡受理"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ryjc_dengji_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/dengji_btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rykc_saomiao_btn_s2"
+            android:text="受理"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/dengji_btn_zancun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rykc_saomiao_btn_s2"
+            android:text="离线暂存"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/dengji_btn_chongzhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rykc_saomiao_btn_s2"
+            android:text="人员核实"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ryjc_dengji_bottom"
+        android:layout_below="@id/ryjc_dengji"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- ====================================================== -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="填表日期："
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/dengji_tv_date_tbrq"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rykc_input_long"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:maxLength="15"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dengji_title_jibenxinxi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/form_title"
+                android:drawableLeft="@drawable/ryhc_icon_word"
+                android:drawableRight="@drawable/rykc_input_down"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="  基本信息"
+                android:textColor="@color/orange"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/dengji_linear_jiben"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/dengji_warning"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/warning"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="姓名："
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <EditText
+                                android:id="@+id/dengji_six_xingming"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rykc_input_long"
+                                android:maxLength="40"
+                                android:maxLines="1"
+                                android:paddingLeft="10dp"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="left"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="民族："
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/dengji_select_minzu"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rykc_input_long"
+                                android:clickable="true"
+                                android:drawableRight="@drawable/rykc_input_down"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:padding="10dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/dengji_touxiang"
+                        android:layout_width="100dp"
+                        android:layout_height="126dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rykc_touxiang" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="身份证号码："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/dengji_six_haoma"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:digits="0123456789xX"
+                        android:maxLength="18"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="出生日期："
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/dengji_six_riqi"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rycj_text"
+                        android:inputType="none"
+                        android:maxLength="14"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="性别："
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/dengji_select_xingbie"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rycj_text"
+                        android:inputType="none"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="户籍地址："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_dzxz_sheng"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/dengji_dzxz_shi"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/dengji_dzxz_qu"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:maxLines="1"
+                        android:text="户籍详细地址："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/dengji_six_dizhi"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:maxLength="127"
+                        android:singleLine="true"
+                        android:paddingLeft="10dp"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="受教育程度："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_shoujiaoyu"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="政治面貌："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_zhengzhimianmao"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="居住证件："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_juzhuzhengjian"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="户籍类别："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_hujileibie"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="免疫接种证："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_mianyi"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/jbxx_csd_t"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="出生地："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_chushengdi"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="婚姻状况："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_hunyinzhuangkuang"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="婚育证明："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_hunyuzhengming"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="联系电话："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/dengji_et_dianhua"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dengji_title_juzhuxinxi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/form_title"
+                android:drawableLeft="@drawable/fwhc_icon_fw"
+                android:drawableRight="@drawable/rykc_input_down"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="  居住信息"
+                android:textColor="@color/orange"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/dengji_linear_juzhuxinxi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="来京日期："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_tv_date_laijingriqi"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="来现住地日期："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_tv_date_laixianzhudi"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="来京原因："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_laijingyuanyin"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dengji_visib_ljqitayuanyin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="来京其他原因："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/dengji_et_ljqitayuanyin"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:gravity="center_vertical"
+                        android:maxLength="127"
+                        android:padding="10dp"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/input_big_blue"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/form_title"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="房屋查询"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="居住类型："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/dengji_select_juzhuleixing"
+                            android:layout_width="260dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="房主姓名："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/dengji_et_fzxm"
+                            android:layout_width="260dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="120"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="房主身份证号："
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/dengji_et_fzsfzhm"
+                            android:layout_width="260dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLines="1"
+                            android:maxLength="18"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/dengji_btn_fangwu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rykc_saomiao_btn_s2"
+                        android:text="选择房屋"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="现住地址："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/dengji_et_xianzhudizhi"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:gravity="center_vertical"
+                        android:maxLength="127"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dengji_title_jiuyeshebao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/form_title"
+                android:drawableLeft="@drawable/ryhc_icon_msg"
+                android:drawableRight="@drawable/rykc_input_down"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text=" 就业社保信息"
+                android:textColor="@color/orange"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/dengji_linear_jiuyeshebao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="目前状况："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dengji_select_muqianzhuangkuang"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/rykc_input_down"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dengji_visib_muqian_jiuye"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="就业单位名称："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/dengji_et_jiuyedanwei"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="80"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/dwxxdz_r"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:text="单位详细地址："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/dengji_et_dwxxdz"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/dwxxdz_r"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="80"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/dwxxdz_b"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignRight="@+id/dengji_et_dwxxdz"
+                            android:layout_centerVertical="true"
+                            android:contentDescription=""
+                            android:visibility="gone"
+                            android:paddingRight="21dp"
+                            android:src="@drawable/location" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="单位所属行业："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/dengji_select_danweisuoshuhangye"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dengji_visib_qtdwsshy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="其他行业："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/dengji_et_qtdwsshy"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:gravity="center_vertical"
+                            android:maxLength="80"
+                            android:padding="10dp"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="从事工作："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/dengji_select_congshigongzuo"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:maxLength="127"
+                            android:maxLines="1"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dengji_visib_qitagongzuo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="其他工作："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/dengji_et_qitagongzuo"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:gravity="center_vertical"
+                            android:maxLength="80"
+                            android:padding="10dp"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="职业："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/dengji_select_zhiye"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="签订劳动合同："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/dengji_select_qianding"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:maxLines="1"
+                            android:text="单位地址："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/dengji_select_danweidizhi"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/rykc_input_down"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="在京参加社保："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_j_wu"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="无"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_j_yanglao"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="养老"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_j_shiye"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="失业"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_j_yiliao"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="医疗"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_j_gongshang"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="工伤"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_j_shengyu"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="生育"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="参加社保："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_2_wu"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="无"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_2_yanglao"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="养老"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_2_shiye"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="失业"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_2_yiliao"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="医疗"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_2_gongshang"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="工伤"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/dengji_cb_2_shengyu"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="生育"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dengji_visib_muqian_xuesheng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="学校名称："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/dengji_et_xuexiaomingcheng"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="80"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="学校所在地："
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/dengji_et_xuexiaosuozaidi"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_input_long"
+                            android:maxLength="80"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dengji_visib_muqian_qita"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="详细信息："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/dengji_et_xiangxixinxi"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rykc_input_long"
+                        android:maxLength="80"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dengji_title_sqcl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/form_title"
+                android:drawableLeft="@drawable/ryhc_icon_word"
+                android:drawableRight="@drawable/rykc_input_down"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text=" 申请材料"
+                android:textColor="@color/orange"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/dengji_linear_sqcl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="身份证明材料："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/dengji_btn_fanpai1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/rykc_saomiao_btn_s2"
+                        android:gravity="center"
+                        android:text="翻拍"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/dengji_linear_sfzmcl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        android:visibility="gone"></LinearLayout>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="在京住所证明："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/dengji_btn_fanpai2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/rykc_saomiao_btn_s2"
+                        android:gravity="center"
+                        android:text="翻拍"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/dengji_linear_zjzscl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        android:visibility="gone"></LinearLayout>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="暂住人口登记表："
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/dengji_btn_fanpai3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/rykc_saomiao_btn_s2"
+                        android:gravity="center"
+                        android:text="翻拍"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/dengji_linear_zzrkdjb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        android:visibility="gone"></LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

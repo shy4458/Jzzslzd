@@ -1,0 +1,313 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/frame_bg" >
+
+    <RelativeLayout
+        android:id="@+id/ryjc_dengji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame_top" >
+
+        <ImageButton
+            android:id="@+id/ryjc_dengji_back"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@drawable/button_back_b" />
+
+        <TextView
+            android:id="@+id/rykc_renyuanheshi_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="人员核查"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sfz_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/ryjc_dengji"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/info_sfz" >
+
+        <ImageView
+            android:id="@+id/top_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/info_sfz_photo"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/xm_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/xm"
+            android:textColor="@color/sfzcolor"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/top_xm"
+            android:layout_width="220sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/xm_l"
+            android:background="@drawable/sear_input"
+            android:inputType="text"
+            android:maxLength="32"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_below="@id/xm_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="180dp"
+            android:layout_marginTop="10dip"
+            android:background="@color/sfzcolor" />
+
+        <TextView
+            android:id="@+id/sfzh_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/xm_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/zjhm"
+            android:textColor="@color/sfzcolor"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/top_zjhm"
+            android:layout_width="220sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/xm_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/sfzh_l"
+            android:background="@drawable/sear_input"
+            android:inputType="textVisiblePassword"
+            android:maxLength="18"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_below="@id/sfzh_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="180dp"
+            android:layout_marginTop="10dip"
+            android:background="@color/sfzcolor" />
+
+        <TextView
+            android:id="@+id/xb_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/sfzh_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/xb"
+            android:textColor="@color/sfzcolor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/top_xb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sfzh_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/xb_l"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/csrq_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sfzh_l"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/xb_l"
+            android:text="@string/csrq"
+            android:textColor="@color/sfzcolor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/top_csrq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sfzh_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/csrq_l"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_below="@id/xb_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="180dp"
+            android:layout_marginTop="10dip"
+            android:background="@color/sfzcolor" />
+
+        <TextView
+            android:id="@+id/mz_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/xb_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/mz"
+            android:textColor="@color/sfzcolor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/top_mz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/xb_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/mz_l"
+            android:background="@drawable/sear_input"
+            android:drawableRight="@drawable/rykc_input_down"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_below="@id/mz_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="180dp"
+            android:layout_marginTop="10dip"
+            android:background="@color/sfzcolor" />
+
+        <TextView
+            android:id="@+id/hjdz_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/mz_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/hjdz"
+            android:textColor="@color/sfzcolor"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/top_hjdz"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mz_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/hjdz_l"
+            android:background="@drawable/sear_input"
+            android:maxLength="32"
+            android:paddingLeft="5dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/top_hjdz_t"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mz_l"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/hjdz_l"
+            android:maxLength="32"
+            android:paddingLeft="5dp"
+            android:text=""
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/top_hjdz"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/sfzcolor" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sfz_rl"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="20dp" >
+
+        <Button
+            android:id="@+id/b_zdjc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rykc_saomiao_btn_s2"
+            android:text="终端扫描"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/b_sdhc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rykc_saomiao_btn_s2"
+            android:text="手动提交"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</RelativeLayout>

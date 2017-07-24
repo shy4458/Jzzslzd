@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_bg" >
+
+    <RelativeLayout
+        android:id="@+id/fwzx_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame_top" >
+
+        <ImageButton
+            android:id="@+id/fwzx_back"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:contentDescription="@string/back"
+            android:src="@drawable/button_back_b" />
+
+        <TextView
+            android:id="@+id/textView_fwzx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/fwzx"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fwzx_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fwzx_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/xx_top_bg" >
+
+        <TextView
+            android:id="@+id/fwzx_fzName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView_fwzx_fzName"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/textView_fwzx_fzName"
+            android:text=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fwzx_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView_fwzx_fzName"
+            android:layout_below="@+id/textView_fwzx_fzName"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:textColor="@color/orange"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView_fwzx_fzName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:text="@string/fzName"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/fwzx_zxInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fwzx_container"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/form_title"
+        android:drawableLeft="@drawable/fwhc_icon_zx"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        android:text="@string/fwBasicInfo"
+        android:textColor="@color/orange"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:id="@+id/fwzx_zxReason"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@+id/fwzx_zxInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/fwzx_fwzxReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/fwzxReason"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView_fwzx_fwzxReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwzx_fwzxReason"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/fwzx_fwzxReason"
+            android:background="@drawable/input_big"
+            android:drawablePadding="100dp"
+            android:drawableRight="@drawable/rykc_input_down"
+            android:paddingRight="15dp"
+            android:text=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fwzx_ryzxReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/fwzx_fwzxReason"
+            android:layout_below="@+id/fwzx_fwzxReason"
+            android:layout_marginTop="50dp"
+            android:text="@string/ryzxReason"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView_fwzx_ryzxReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fwzx_ryzxReason"
+            android:layout_alignLeft="@+id/textView_fwzx_fwzxReason"
+            android:background="@drawable/input_big"
+            android:drawablePadding="100dp"
+            android:drawableRight="@drawable/rykc_input_down"
+            android:paddingRight="15dp"
+            android:text=""
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/fwzx_queding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/rykc_btn_blue_long_s"
+        android:text="@string/queding"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+</RelativeLayout>

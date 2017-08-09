@@ -31,11 +31,11 @@ public class ReadCardControler {
     private IDCardManager manager; //身份证读卡器
     private Handler handler; //返回handler
     private Context context;
-    private ReadCard readCard = new ReadCard();
+    private ReadCard readCard;
     private static ReadCardControler controler;
 
     private ReadCardControler() {
-
+        StaticObject.print("读卡工具初始化...");
     }
 
     /**
@@ -45,18 +45,16 @@ public class ReadCardControler {
      * @param handler
      */
     public static ReadCardControler getInstance(Context context, Handler handler) {
-
+        StaticObject.print("读卡工具类初始化...");
         if (controler == null)
             controler = new ReadCardControler();
         controler.handler = handler;
         controler.context = context;
         if (controler.manager == null)
             controler.manager = new IDCardManager(context);
-
         controler.isrunning = true;
         controler.isread = false;
 
-        controler.readCard.start();
         return controler;
 
     }
@@ -65,17 +63,24 @@ public class ReadCardControler {
      * 关闭
      */
     public void close() {
-
+        StaticObject.print("读卡工具类关闭...");
         controler.isread = false;
         controler.isrunning = false;
         controler.manager.Close();
         controler.manager = null;
         controler.readCard = null;
-        controler = null;
+
     }
 
     public void read() {
+        StaticObject.print("开始读卡...");
+        if (controler.readCard == null)
+            controler.readCard = new ReadCard();
+
+        if (!controler.readCard.isAlive())
+            controler.readCard.start();
         controler.isread = true;
+
 
     }
 
@@ -136,6 +141,7 @@ public class ReadCardControler {
     class ReadCard extends Thread {
         @Override
         public void run() {
+            StaticObject.print("读卡线程启动...");
             while (controler.isrunning) {
                 if (controler.isread && controler.manager != null) {
                     if (controler.manager.FindCard(1000)) {

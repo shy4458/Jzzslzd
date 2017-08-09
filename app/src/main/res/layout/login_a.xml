@@ -22,7 +22,7 @@
             android:drawableLeft="@drawable/login_user"
             android:ems="10"
             android:hint="@string/login_user"
-            android:inputType="numberSigned"
+            android:digits="0123456789xX"
             android:paddingLeft="10dp"
             android:textSize="20sp" />
 

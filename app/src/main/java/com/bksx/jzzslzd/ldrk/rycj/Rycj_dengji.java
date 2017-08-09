@@ -171,9 +171,6 @@ public class Rycj_dengji extends Activity implements
         initData();
         //身份证扫描
         readCardControler = ReadCardControler.getInstance(Rycj_dengji.this, handler);
-        readCardControler.read();
-
-
     }
 
     /**
@@ -381,7 +378,7 @@ public class Rycj_dengji extends Activity implements
                         jbxx_myjzz_s.setClickable(true);
                         jbxx_myjzz_t.setTextColor(Rycj_dengji.this.getResources().getColor(R.color.black));
                     }
-                    //lockbaseSix();
+                    lockbaseSix();
                     showToast(Rycj_dengji.this, "读卡成功!");
                     ryhs();
                     break;
@@ -1247,6 +1244,7 @@ public class Rycj_dengji extends Activity implements
         }
         return false;
     }
+
     private boolean isNullFw(EditText view, String name) {
         if (view != null && "".equals(view.getText().toString().trim())) {
             view.requestFocus();
@@ -1290,9 +1288,11 @@ public class Rycj_dengji extends Activity implements
             super.onSuccess(result);
             if (jsonResult.getReturnCode() == 201) {
                 sucess();
-            } else if (jsonResult.getReturnCode() == 202) {
-                jbxx_warn.setVisibility(View.VISIBLE);
-            } else {
+            }
+//            else if (jsonResult.getReturnCode() == 202) {
+//                jbxx_warn.setVisibility(View.VISIBLE);
+//            }
+            else {
                 showToast(Rycj_dengji.this, jsonResult.getReturnMsg());
             }
 
@@ -1400,11 +1400,11 @@ public class Rycj_dengji extends Activity implements
         @Override
         public void onSuccess(String result) {
             super.onSuccess(result);
-            if (jsonResult.getReturnCode() == 202) {
-                jbxx_warn.setVisibility(View.VISIBLE);
-            } else {
-                showToast(Rycj_dengji.this, jsonResult.getReturnMsg());
-            }
+            showToast(Rycj_dengji.this, jsonResult.getReturnMsg());
+//            if (jsonResult.getReturnCode() == 202) {
+//                jbxx_warn.setVisibility(View.VISIBLE);
+//            } else {
+//            }
         }
     };
 
@@ -1431,6 +1431,12 @@ public class Rycj_dengji extends Activity implements
         HttpRequest.POST(Rycj_dengji.this, HttpRequest.BKHS, json, ryhc);
         readCardControler.read();
 
+    }
+
+    @Override
+    protected void onStart() {
+        readCardControler.read();
+        super.onStart();
     }
 
     /**

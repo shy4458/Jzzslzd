@@ -914,6 +914,7 @@
                             android:background="@drawable/rykc_input_long"
                             android:maxLines="1"
                             android:maxLength="18"
+                            android:digits="0123456789xX"
                             android:paddingLeft="10dp"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -1577,7 +1578,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="right"
                         android:text="身份证明材料："
-                        android:textColor="@color/black"
+                        android:textColor="@color/gray"
                         android:textSize="20sp" />
 
                     <Button
@@ -1618,7 +1619,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="right"
                         android:text="在京住所证明："
-                        android:textColor="@color/black"
+                        android:textColor="@color/gray"
                         android:textSize="20sp" />
 
                     <Button
@@ -1659,7 +1660,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="right"
                         android:text="暂住人口登记表："
-                        android:textColor="@color/black"
+                        android:textColor="@color/gray"
                         android:textSize="20sp" />
 
                     <Button

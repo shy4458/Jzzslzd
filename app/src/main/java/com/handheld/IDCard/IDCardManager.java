@@ -45,6 +45,7 @@ public class IDCardManager {
 		mContext = context;
 		mSerialPort = new SerialPort();
 		mSerialPort.rfid_poweron();
+
 //		mSerialPort.psam_poweron();
 //		mSerialPort.power_5Von();
 		try {

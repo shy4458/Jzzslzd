@@ -20,7 +20,9 @@ import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.TransformationMethod;
@@ -214,12 +216,16 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         // 如果不自动登录，要校验账号密码非空
         String user = login_user_e.getText().toString().trim();
         if ("".equals(user)) {
-            StaticObject.showToast(LoginActivity.this, "请填写管理员账号");
+            Message msg = new Message();
+            msg.obj = "请填写管理员账号";
+            handler.sendMessage(msg);
             return;
         }
         String pwd = login_pwd_e.getText().toString().trim();
         if ("".equals(pwd)) {
-            StaticObject.showToast(LoginActivity.this, "请填写管理员密码");
+            Message msg = new Message();
+            msg.obj = "请填写管理员密码";
+            handler.sendMessage(msg);
             return;
         }
         UserLogin userLogin = new UserLogin();
@@ -290,5 +296,11 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         }
     }
 
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            StaticObject.showToast(LoginActivity.this, (String) msg.obj);
+        }
+    };
 
 }

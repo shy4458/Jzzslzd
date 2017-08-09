@@ -5,7 +5,7 @@ buildscript {
         maven {url 'http://130.10.8.208/repository/bksx-maven/'}
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:2.3.3'
     }
 }
 

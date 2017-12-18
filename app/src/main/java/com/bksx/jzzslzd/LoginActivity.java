@@ -54,7 +54,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     private CheckBox login_rem_pwd_c;
     // 重置，登录 按钮
     private Button login_reset_b, login_login_b;
-    private ImageView login_pwd_show;
+    private ImageView login_pwd_show,login_user_show;
     // SharePerences
     private SharedPreferences preferences;
     private MyAutoUpdate autoUpdate;
@@ -161,10 +161,12 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         login_reset_b = (Button) findViewById(R.id.login_reset_b);
         login_login_b = (Button) findViewById(R.id.login_login_b);
         login_pwd_show = (ImageView) findViewById(R.id.login_show_pwd);
+        login_user_show = (ImageView) findViewById(R.id.login_show_user);
 
         login_reset_b.setOnClickListener(this);
         login_login_b.setOnClickListener(this);
         login_pwd_show.setOnClickListener(this);
+        login_user_show.setOnClickListener(this);
 
         login_reset_b.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -255,7 +257,11 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.login_show_pwd: // 密码显隐图标
                 // 修改密码的显隐状态
-                updatePwdShowType();
+                updatePwdShowType(login_pwd_e);
+                break;
+            case R.id.login_show_user: // 账号显隐图标
+                // 修改账号的显隐状态
+                updatePwdShowType(login_user_e);
                 break;
 
             default:
@@ -267,14 +273,14 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     /**
      * 修改密码的显隐状态
      */
-    private void updatePwdShowType() {
-        TransformationMethod m = login_pwd_e.getTransformationMethod();
+        private void updatePwdShowType(EditText editText) {
+        TransformationMethod m = editText.getTransformationMethod();
         if (m.equals(PasswordTransformationMethod.getInstance())) {
-            login_pwd_e.setTransformationMethod(HideReturnsTransformationMethod
+            editText.setTransformationMethod(HideReturnsTransformationMethod
                     .getInstance());
         } else {
             // 设置密码为隐藏的
-            login_pwd_e.setTransformationMethod(PasswordTransformationMethod
+            editText.setTransformationMethod(PasswordTransformationMethod
                     .getInstance());
         }
     }

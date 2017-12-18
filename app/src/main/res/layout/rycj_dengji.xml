@@ -407,8 +407,8 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/rykc_input_long"
                         android:maxLength="127"
-                        android:singleLine="true"
                         android:paddingLeft="10dp"
+                        android:singleLine="true"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -912,23 +912,40 @@
                             android:layout_width="260dp"
                             android:layout_height="wrap_content"
                             android:background="@drawable/rykc_input_long"
-                            android:maxLines="1"
-                            android:maxLength="18"
                             android:digits="0123456789xX"
+                            android:maxLength="18"
+                            android:maxLines="1"
                             android:paddingLeft="10dp"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/dengji_btn_fangwu"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rykc_saomiao_btn_s2"
-                        android:text="选择房屋"
-                        android:textColor="@android:color/white"
-                        android:textSize="20sp" />
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/dengji_btn_fangwu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_saomiao_btn_s2"
+                            android:text="选择房屋"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/dengji_btn_fangwudengji"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rykc_saomiao_btn_s2"
+                            android:layout_marginLeft="20dp"
+                            android:text="房屋登记"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp" />
+                    </LinearLayout>
                 </LinearLayout>
 
 
@@ -1083,9 +1100,9 @@
                             android:layout_alignRight="@+id/dengji_et_dwxxdz"
                             android:layout_centerVertical="true"
                             android:contentDescription=""
-                            android:visibility="gone"
                             android:paddingRight="21dp"
-                            android:src="@drawable/location" />
+                            android:src="@drawable/location"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <LinearLayout
@@ -1691,5 +1708,4 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>

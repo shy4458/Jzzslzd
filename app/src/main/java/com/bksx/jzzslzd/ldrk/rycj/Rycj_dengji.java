@@ -77,7 +77,7 @@ public class Rycj_dengji extends Activity implements
     private LinearLayout jbxx_l, jzxx_l, jyxx_l, sqcl_l;
 
     private ImageButton btn_back_i;
-    private Button btn_hs, btn_xctj, btn_fwcx, btn_zctj;
+    private Button btn_hs, btn_xctj, btn_fwcx,btn_fwdj, btn_zctj;
     private String path; // 拍照图片地址/
     private String fileName; // 照片名
     private File photoFile;
@@ -256,6 +256,12 @@ public class Rycj_dengji extends Activity implements
             case R.id.dengji_btn_fangwu:
                 fwcx();
                 break;
+            // 房屋信息录入
+            case R.id.dengji_btn_fangwudengji:
+                Intent intent = new Intent(Rycj_dengji.this,
+                        Rycj_fangwudengji.class);
+                startActivity(intent);
+                break;
             // 返回
             case R.id.ryjc_dengji_back:
                 this.finish();
@@ -295,6 +301,17 @@ public class Rycj_dengji extends Activity implements
         }
         if (isNull(jzxx_fzxm_e, "房主姓名")) {
             return;
+        }
+        String sfzhm = jzxx_fzsfzh_e.getText().toString().trim();
+        if (!TextUtils.isEmpty(sfzhm)) {
+            String[] id_check = FormCheck.check_Card_ID(sfzhm);
+            if (id_check[0].equals("false")) {
+                StaticObject.showToast(this, id_check[1]);
+                jzxx_fzsfzh_e.requestFocus();
+                return;
+            } else {
+                jzxx_fzsfzh_e.setText(id_check[1]);
+            }
         }
         Fwxx fwxx = new Fwxx();
         fwxx.setFwlb(jzxx_jzlx_s.getCodeId());
@@ -378,7 +395,6 @@ public class Rycj_dengji extends Activity implements
                         jbxx_myjzz_s.setClickable(true);
                         jbxx_myjzz_t.setTextColor(Rycj_dengji.this.getResources().getColor(R.color.black));
                     }
-                    lockbaseSix();
                     showToast(Rycj_dengji.this, "读卡成功!");
                     ryhs();
                     break;
@@ -552,6 +568,17 @@ public class Rycj_dengji extends Activity implements
         }
         if (isNull(jzxx_fzxm_e, "房主姓名")) {
             return false;
+        }
+        String sfzhm = jzxx_fzsfzh_e.getText().toString().trim();
+        if (!TextUtils.isEmpty(sfzhm)) {
+            String[] id_check = FormCheck.check_Card_ID(sfzhm);
+            if (id_check[0].equals("false")) {
+                StaticObject.showToast(this, id_check[1]);
+                jzxx_fzsfzh_e.requestFocus();
+                return false;
+            } else {
+                jzxx_fzsfzh_e.setText(id_check[1]);
+            }
         }
         if (isNullFw(jzxx_xzdz_e, "房屋")) {
             return false;
@@ -1270,7 +1297,7 @@ public class Rycj_dengji extends Activity implements
     }
 
     /**
-     * 校验EditText表单内容不为null和""
+     * 校验SelectViewAndHandlerAndMsg表单内容不为null和""
      */
     private boolean isNull(SelectViewAndHandlerAndMsg select, String name) {
         if (select != null
@@ -1750,6 +1777,7 @@ public class Rycj_dengji extends Activity implements
         jyxx_sbxx_gs = (CheckBox) findViewById(R.id.dengji_cb_2_gongshang);
         jbxx_xm_e = (EditText) findViewById(R.id.dengji_six_xingming);
         jbxx_sfzh_e = (EditText) findViewById(R.id.dengji_six_haoma);
+        lockbaseSix();
         jbxx_csrq_e = (EditText) findViewById(R.id.dengji_six_riqi);
         jbxx_hjxxdz_e = (EditText) findViewById(R.id.dengji_six_dizhi);
         jzxx_xzdz_e = (EditText) findViewById(R.id.dengji_et_xianzhudizhi);
@@ -1769,6 +1797,7 @@ public class Rycj_dengji extends Activity implements
         btn_xctj = (Button) findViewById(R.id.dengji_btn_next);
         btn_zctj = (Button) findViewById(R.id.dengji_btn_zancun);
         btn_fwcx = (Button) findViewById(R.id.dengji_btn_fangwu);
+        btn_fwdj = (Button) findViewById(R.id.dengji_btn_fangwudengji);
         clxx_sfzmcl = (Button) findViewById(R.id.dengji_btn_fanpai1);
         clxx_zjzscl = (Button) findViewById(R.id.dengji_btn_fanpai2);
         clxx_zzrkdjb = (Button) findViewById(R.id.dengji_btn_fanpai3);
@@ -1810,6 +1839,7 @@ public class Rycj_dengji extends Activity implements
         btn_xctj.setOnClickListener(this);
         btn_zctj.setOnClickListener(this);
         btn_fwcx.setOnClickListener(this);
+        btn_fwdj.setOnClickListener(this);
         btn_hs.setOnClickListener(this);
         btn_back_i.setOnClickListener(this);
         jyxx_dwxxdz_dw_i.setOnClickListener(new View.OnClickListener() {

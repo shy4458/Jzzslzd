@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bksx.jzzslzd"
-    android:versionCode="4"
-    android:versionName="2017080701" >
+    android:versionCode="6"
+    android:versionName="2017092101" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -123,6 +123,10 @@
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="com.bksx.jzzslzd.ldrk.rycj.Rycj_dengji"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.bksx.jzzslzd.ldrk.rycj.Rycj_fangwudengji"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity

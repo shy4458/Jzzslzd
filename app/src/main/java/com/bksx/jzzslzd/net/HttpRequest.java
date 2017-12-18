@@ -24,6 +24,9 @@ public class HttpRequest {
     public static final String LOGIN = "/login/login";//登录
     public static final String BKHS = "/rycj/bkhs";//办卡人员核实
     public static final String FWCX = "/fw/fwcx";//房屋查询
+    public static final String FWJY = "/fw/check";//房屋校验
+    public static final String FWLR = "/fw/fwlr";//房屋录入
+    public static final String SSXQCX = "/login/getSsxq";//所属辖区查询
     public static final String DJKSL = "/rycj/djksl";//登记卡受理
     private HttpURLConnection urlConnection;
     private URL url;

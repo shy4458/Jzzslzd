@@ -43,7 +43,6 @@ public class Tab_Sy_Activity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tab_sy_a);
 		initIconInfo();
@@ -64,7 +63,6 @@ public class Tab_Sy_Activity extends Activity {
 	 */
 	private void addIcons() {
 		GridView gridview = (GridView) findViewById(R.id.tab_sy_layout);
-
 		// 生成动态数组，并且转入数据
 		ArrayList<HashMap<String, Object>> lstImageItem = new ArrayList<HashMap<String, Object>>();
 		for (int i = 0; i < icon_ts.length; i++) {
@@ -77,10 +75,8 @@ public class Tab_Sy_Activity extends Activity {
 		SimpleAdapter saImageItems = new SimpleAdapter(this, // 没什么解释
 				lstImageItem,// 数据来源
 				R.layout.sy_icon,// night_item的XML实现
-
 				// 动态数组与ImageItem对应的子项
 				new String[] { "ItemImage", "ItemText" },
-
 				// ImageItem的XML文件里面的一个ImageView,两个TextView ID
 				new int[] { R.id.icon_img, R.id.icon_tv });
 		// 添加并且显示
@@ -102,7 +98,7 @@ public class Tab_Sy_Activity extends Activity {
 				startActivity(intent);
 				overridePendingTransition(R.anim.fade, R.anim.hold);
 			} catch (ClassNotFoundException e) {
-				StaticObject.print("图标点击出错" + icon_ts[position] + "-->"
+				StaticObject.print("图标点击出错:" + icon_ts[position] + "-->"
 						+ icon_className[position]);
 				e.printStackTrace();
 			}

@@ -3,13 +3,13 @@
     <gateway>
         <!-- 网关及传输配置 -->
         <!-- 网关地址 测试部 -->
-        <!--<gatewayurl>130.10.9.76:9300</gatewayurl>-->
+        <gatewayurl>130.10.9.76:9300</gatewayurl>
         <!--<gatewayurl>130.10.7.236:6666</gatewayurl>-->
-        <gatewayurl>43.240.139.3:5001</gatewayurl>
+        <!--<gatewayurl>43.240.139.3:5001</gatewayurl>-->
         <!-- 是否获取Demo数据而不走网络 -->
-        <isDemo>0</isDemo>
-        <!-- 数据库版本（必须与库里版本号一致否则数据库无法更新） -->
-        <dbversion>2017071801</dbversion>
+        <isDemo>1</isDemo>
+        <!-- 数据库版本（必须与库里版本号一致否则数据库无法更新）-->
+        <dbversion>2017081003</dbversion>
         <photoPath>/sdcard/jzzslzd/photo</photoPath>
         <!-- 发送超时时间(s) -->
         <connecttimeout>600</connecttimeout>

@@ -1,8 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
-        //jcenter()
-        maven {url 'http://130.10.8.208/repository/bksx-maven/'}
+        jcenter()
+       // maven {url 'http://130.10.8.208/repository/bksx-maven/'}
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -12,5 +12,6 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+
     }
 }

@@ -1,17 +1,5 @@
 package com.bksx.jzzslzd.gltz;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import com.bksx.jzzslzd.R;
-import com.bksx.jzzslzd.bo.DataCommon;
-import com.bksx.jzzslzd.bo.Ryxx;
-import com.bksx.jzzslzd.common.RequestCode;
-import com.bksx.jzzslzd.common.StaticObject;
-import com.bksx.jzzslzd.syfw.Gxfw_Activity;
-import com.google.gson.Gson;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -26,6 +14,18 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+
+import com.bksx.jzzslzd.R;
+import com.bksx.jzzslzd.bo.DataCommon;
+import com.bksx.jzzslzd.bo.Ryxx;
+import com.bksx.jzzslzd.common.RequestCode;
+import com.bksx.jzzslzd.common.StaticObject;
+import com.bksx.jzzslzd.syfw.Gxfw_Activity;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Fwlb_Activity extends Activity implements OnScrollListener {
 	private String[][] arrayss = new String[1][3];// 请求数据使用
@@ -66,7 +66,6 @@ public class Fwlb_Activity extends Activity implements OnScrollListener {
 		footerView = View.inflate(this, R.layout.footerview, null);
 		ListView lv = (ListView) findViewById(R.id.rykc_fangwuliebiao_list);
 		list = new ArrayList<Map<String, String>>();
-
 		adapter = new SimpleAdapter(this, list,
 				R.layout.rykc_fangwuliebiao_list_item, from, to);
 		lv.addFooterView(footerView);
@@ -260,7 +259,7 @@ public class Fwlb_Activity extends Activity implements OnScrollListener {
 	/**
 	 * 将字符串数据，json解析之后，放入listview数据源 返回字符串中的ztbs
 	 * 
-	 * @param result
+	 * @param
 	 */
 	private void forList(String[][] getData) {
 

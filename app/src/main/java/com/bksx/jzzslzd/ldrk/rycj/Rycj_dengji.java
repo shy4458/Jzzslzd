@@ -77,11 +77,11 @@ public class Rycj_dengji extends Activity implements
     private LinearLayout jbxx_l, jzxx_l, jyxx_l, sqcl_l;
 
     private ImageButton btn_back_i;
-    private Button btn_hs, btn_xctj, btn_fwcx,btn_fwdj, btn_zctj;
+    private Button btn_hs, btn_xctj, btn_fwcx, btn_fwdj, btn_zctj;
     private String path; // 拍照图片地址/
     private String fileName; // 照片名
     private File photoFile;
-
+    private long t1 = 0;
 
     /**
      * 人员暂存id（用于提交成功后的删除操作）
@@ -243,13 +243,27 @@ public class Rycj_dengji extends Activity implements
                 break;
             // 详采提交数据！！！
             case R.id.dengji_btn_next:
-                // 人员6项为必校验项，无效，提交终止。
+                // 人员6项为必校验项
                 if (!checkSix()) {
                     break;
                 }
                 // 校验所有必填项
                 if (checkAllForm()) {
-                    ryxc();
+                    if (t1 == 0) {//第一次单击，初始化为本次单击的时间
+                        t1 = (new Date()).getTime();
+                        ryxc();
+                    } else {
+                        long curTime = (new Date()).getTime();//本次单击的时间
+                        System.out.println("两次单击间隔时间：" + (curTime - t1));//计算本次和上次的时间差
+                        if (curTime - t1 > 3 * 1000) {
+                            //间隔3秒允许点击，可以根据需要修改间隔时间
+                            t1 = curTime;//当前单击事件变为上次时间
+                            ryxc();
+                        } else {
+                            StaticObject.showToast(Rycj_dengji.this, "点击太过频繁");
+                        }
+                    }
+
                 }
                 break;
             // 房屋信息查询
@@ -1386,17 +1400,17 @@ public class Rycj_dengji extends Activity implements
         String zmcl_suffix = "";
         String zmcl_lx = "";
         for (String path : sfzmclPathList) {
-            zmcl += (StaticObject.imageToBase64(path) + ",01;");
+            zmcl += (imageToBase64(path) + ",01;");
             zmcl_suffix += "jpg;";
             zmcl_lx = zmcl_lx.contains("01") ? zmcl_lx : zmcl_lx + "01;";
         }
         for (String path : zjzsclPathList) {
-            zmcl += (StaticObject.imageToBase64(path) + ",02;");
+            zmcl += (imageToBase64(path) + ",02;");
             zmcl_suffix += "jpg;";
             zmcl_lx = zmcl_lx.contains("02") ? zmcl_lx : zmcl_lx + "02;";
         }
         for (String path : zzrkdjbPathList) {
-            zmcl += (StaticObject.imageToBase64(path) + ",03;");
+            zmcl += (imageToBase64(path) + ",03;");
             zmcl_suffix += "jpg;";
             zmcl_lx = zmcl_lx.contains("03") ? zmcl_lx : zmcl_lx + "03;";
         }
@@ -1777,7 +1791,7 @@ public class Rycj_dengji extends Activity implements
         jyxx_sbxx_gs = (CheckBox) findViewById(R.id.dengji_cb_2_gongshang);
         jbxx_xm_e = (EditText) findViewById(R.id.dengji_six_xingming);
         jbxx_sfzh_e = (EditText) findViewById(R.id.dengji_six_haoma);
-        lockbaseSix();
+        //lockbaseSix();
         jbxx_csrq_e = (EditText) findViewById(R.id.dengji_six_riqi);
         jbxx_hjxxdz_e = (EditText) findViewById(R.id.dengji_six_dizhi);
         jzxx_xzdz_e = (EditText) findViewById(R.id.dengji_et_xianzhudizhi);

@@ -124,7 +124,9 @@
         <activity
             android:name="com.bksx.jzzslzd.ldrk.rycj.Rycj_dengji"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:theme="@android:style/Theme.NoTitleBar" >
+
+        </activity>
         <activity
             android:name="com.bksx.jzzslzd.ldrk.rycj.Rycj_fangwudengji"
             android:screenOrientation="portrait"

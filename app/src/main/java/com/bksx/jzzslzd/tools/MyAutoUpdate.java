@@ -1,23 +1,12 @@
 package com.bksx.jzzslzd.tools;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import com.bksx.jzzslzd.R;
-import com.bksx.jzzslzd.common.StaticObject;
-
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
@@ -25,6 +14,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.bksx.jzzslzd.R;
+import com.bksx.jzzslzd.common.StaticObject;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * 软件更新类
@@ -214,7 +214,7 @@ public class MyAutoUpdate {
 	/**
 	 * 下载apk
 	 * 
-	 * @param url
+	 * @param
 	 */
 
 	private void downloadApk() {
@@ -224,7 +224,7 @@ public class MyAutoUpdate {
 	/**
 	 * 安装apk
 	 * 
-	 * @param url
+	 * @param
 	 */
 	private void installApk() {
 		File apkfile = new File(saveFileName);

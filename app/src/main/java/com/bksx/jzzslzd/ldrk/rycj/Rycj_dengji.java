@@ -32,11 +32,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bksx.jzzslzd.R;
+import com.bksx.jzzslzd.bean.GlyCode;
+import com.bksx.jzzslzd.bo.CodeTable;
 import com.bksx.jzzslzd.bo.DjkSl;
 import com.bksx.jzzslzd.bo.Fwxx;
 import com.bksx.jzzslzd.bo.IDCard;
 import com.bksx.jzzslzd.bo.RyzcVo;
 import com.bksx.jzzslzd.bo.UserLogin;
+import com.bksx.jzzslzd.bo.XqCode;
 import com.bksx.jzzslzd.common.StaticObject;
 import com.bksx.jzzslzd.ldrk.rykc.Rykc_fangwuliebiao_act;
 import com.bksx.jzzslzd.net.HttpCallBack;
@@ -50,8 +53,13 @@ import com.bksx.jzzslzd.tools.SelectDwhyCsgzLd;
 import com.bksx.jzzslzd.tools.SelectViewAndHandlerAndMsg;
 import com.bksx.jzzslzd.tools.SqliteCodeTable;
 import com.bksx.jzzslzd.tools.SqliteHelper;
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -152,6 +160,7 @@ public class Rycj_dengji extends Activity implements
             jyxx_zjsb_gs, jyxx_zjsb_shy, jyxx_sbxx_w, jyxx_sbxx_yl,
             jyxx_sbxx_sy, jyxx_sbxx_yil, jyxx_sbxx_gs, jyxx_sbxx_shy;
     private ReadCardControler readCardControler;
+
     private LinearLayout ll_sfzmcl, ll_zjzscl, ll_zzrkdjb;
     private ArrayList<ImageView> sfzmclList = new ArrayList<ImageView>();
     private ArrayList<String> sfzmclPathList = new ArrayList<String>();
@@ -160,12 +169,28 @@ public class Rycj_dengji extends Activity implements
     private ArrayList<ImageView> zzrkdjbList = new ArrayList<ImageView>();
     private ArrayList<String> zzrkdjbPathList = new ArrayList<String>();
     private UserLogin userData;
+    private TextView tvSsfwz;
+    private TextView tvSxxq;
+    private TextView tvGly;
+    private SelectViewAndHandlerAndMsg jdxx_fwz_s;
+    private LinkedHashMap<String, String> xzqhmap;
+    private SelectViewAndHandlerAndMsg xqS;
+    private SelectViewAndHandlerAndMsg glyS;
+    private LinkedHashMap<String, String> glyMap;
+    private RyzcVo rv;
+    private LinkedHashMap<String, String> fwzmap;
+    private LinkedHashMap<String, String> xqmap;
+    private String fwz;
+    private String xq;
+    private String gly;
+    private String ryzcData;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rycj_dengji);
+
         findView();
         setClick();
         initData();
@@ -173,28 +198,34 @@ public class Rycj_dengji extends Activity implements
         readCardControler = ReadCardControler.getInstance(Rycj_dengji.this, handler);
     }
 
+
     /**
      * 回显
      */
     private void initData() {
         init();
         Intent intent = getIntent();
-        int flag = intent.getFlags();// 暂存0，
+        // 暂存0，
+        int flag = intent.getFlags();
         if (flag == 0) {// 暂存0，
-            String ryzcData = intent.getStringExtra("ryzcData");
+            ryzcData = intent.getStringExtra("ryzcData");
             if (ryzcData != null && !"".equals(ryzcData)) {
-                RyzcVo rv = new Gson().fromJson(ryzcData, RyzcVo.class);
+                rv = new Gson().fromJson(ryzcData, RyzcVo.class);
                 StaticObject.nullConverNullString(rv); // 属性null全转成""
                 setData(rv);
                 zc_id = rv.getJb_sfz() + rv.getJb_xm();
                 btn_zctj.setVisibility(View.GONE);
+
             } else {
                 initShow();
                 zc_id = null;
+                ArrayList<CodeTable> fwz = userData.getFwz();
+                String id = fwz.get(0).getId();
+                cxXqAndGly(id);
             }
+        } else {
 
         }
-
     }
 
     /*
@@ -298,11 +329,9 @@ public class Rycj_dengji extends Activity implements
                         Rykc_fangwuliebiao_act.class);
                 intent.putExtra("data", gson.toJson(jsonResult.getReturnData()));
                 startActivityForResult(intent, 0);
-
             } else {
                 showToast(Rycj_dengji.this, jsonResult.getReturnMsg());
             }
-
         }
     };
 
@@ -385,6 +414,12 @@ public class Rycj_dengji extends Activity implements
                         jyxx_mqzk_xs_l.setVisibility(View.GONE);
                     }
                     break;
+
+                case 56:
+                    //TODO
+                    String id = jdxx_fwz_s.getCodeId();
+                    cxXqAndGly(id);
+                    break;
                 case 110:
                     // 扫描成功后 回调
                     IDCard card = (IDCard) msg.obj;
@@ -448,6 +483,9 @@ public class Rycj_dengji extends Activity implements
      */
     private boolean checkAllForm() {
         if (isNull(tbrq, "填表日期")) {
+            return false;
+        }
+        if (isNull(tvGly, "管理员")) {
             return false;
         }
         if (!checkOtherBaseInfo()) {
@@ -871,7 +909,6 @@ public class Rycj_dengji extends Activity implements
         } else {
             StaticObject.showToast(Rycj_dengji.this, "保存成功！");
             Rycj_dengji.this.finish();
-
         }
     }
 
@@ -1050,9 +1087,26 @@ public class Rycj_dengji extends Activity implements
         } else {
             tbrq.setText(FormCheck.getDate1(vo.getTbrq()));
         }
+
+        fwz = vo.getFwz();
+        xq = vo.getXq();
+        gly = vo.getGly();
+
+        tvSsfwz.setText(fwz.split(",")[0]);
+        tvSxxq.setText(xq.split(",")[0]);
+        tvGly.setText(gly.split(",")[0]);
+//        fwzmap = vo.getFwzMap();
+//        xqmap = vo.getXqMap();
+//        glyMap = vo.getGlyMap();
+
+//        jdxx_fwz_s.setCodeId(vo.getFwz());
+//        xqS.setCodeId(vo.getXq());
+//        glyS.setCodeId(vo.getGly());
+
         /***************/
         /** 基本信息 **/
         /***************/
+
         jbxx_photoPath = vo.getJb_photoPath();
         jbxx_xm_e.setText(vo.getJb_xm());
         jbxx_sfzh_e.setText(vo.getJb_sfz());
@@ -1078,6 +1132,9 @@ public class Rycj_dengji extends Activity implements
         }
         lockbaseSix();
         jbxx_hjdz_s.setCodeId(vo.getJb_hjdz());
+        //受教育信息
+        String jb_sjycd = vo.getJb_sjycd();
+        System.out.println(jb_sjycd);
         jbxx_sjycd_s.setCodeId(vo.getJb_sjycd());
         jbxx_zzmm_s.setCodeId(vo.getJb_zzmm());
         jbxx_jzzj_s.setCodeId(vo.getJb_jzzj());
@@ -1164,8 +1221,6 @@ public class Rycj_dengji extends Activity implements
                 setImage(file, ll_zzrkdjb, zzrkdjbList, zzrkdjbPathList);
             }
         }
-
-
     }
 
 
@@ -1336,13 +1391,30 @@ public class Rycj_dengji extends Activity implements
             else {
                 showToast(Rycj_dengji.this, jsonResult.getReturnMsg());
             }
-
         }
     };
 
-
     private void ryxc() {
         DjkSl djkSl = new DjkSl();
+        if (ryzcData != null && !"".equals(ryzcData)) {
+            //TODO  暂存数据受理
+            String codeId = gly.split(",")[1];
+            djkSl.setGlybm(codeId);
+            String codeId2 = xq.split(",")[1];
+            djkSl.setRzf_ssxqbh(codeId2);
+
+            djkSl.setRzf_xzdxzqh(xq.split(",")[2]);
+        } else {
+            //TODO  正常受理
+            String codeId = glyS.getCodeId();
+            djkSl.setGlybm(codeId);
+            String codeId2 = xqS.getCodeId();
+            djkSl.setRzf_ssxqbh(codeId2);
+
+            String xzqh = xzqhmap.get(xqS.getCodeId());
+            djkSl.setRzf_xzdxzqh(xzqh);
+        }
+
         djkSl.setBip_xm(jbxx_xm_e.getText().toString().trim());
         djkSl.setBip_xb("男".equals(jbxx_xb_t.getText().toString().trim()) ? "1" : "2");
         djkSl.setBip_sfzhm(jbxx_sfzh_e.getText().toString().trim());
@@ -1419,7 +1491,7 @@ public class Rycj_dengji extends Activity implements
         djkSl.setZmcl_lx(zmcl_lx);
         //房屋返回信息
         djkSl.setRzf_zslx(fwxx[5].trim());
-        djkSl.setRzf_xzdxzqh(fwxx[7].trim());
+//        djkSl.setRzf_xzdxzqh(fwxx[7].trim());
         djkSl.setRzf_xzdxxdz(fwxx[6].trim());
         djkSl.setRzf_fzxm(fwxx[1].trim());
         djkSl.setRzf_fzsfz(fwxx[2].trim());
@@ -1429,8 +1501,11 @@ public class Rycj_dengji extends Activity implements
         if (!TextUtils.isEmpty(pcsdm)) {
             djkSl.setRzf_sspcsdm(pcsdm.trim());
         }
-        djkSl.setRzf_fwzbh(fwxx[8].trim());
-        djkSl.setRzf_ssxqbh(fwxx[9].trim());
+
+        String codeId1 = jdxx_fwz_s.getCodeId();
+        djkSl.setRzf_fwzbh(codeId1);
+
+
         String json = djksl.gson.toJson(djkSl);
         djksl.showDialog("数据请求中，所用时间较长，请勿取消并耐心等待...");
         HttpRequest.POST(Rycj_dengji.this, HttpRequest.DJKSL, json, djksl);
@@ -1445,6 +1520,7 @@ public class Rycj_dengji extends Activity implements
 //            if (jsonResult.getReturnCode() == 202) {
 //                jbxx_warn.setVisibility(View.VISIBLE);
 //            } else {
+//
 //            }
         }
     };
@@ -1480,8 +1556,9 @@ public class Rycj_dengji extends Activity implements
         super.onStart();
     }
 
+
     /**
-     * 人员暂存
+     * 人员暂存  99999
      */
     private void ryzc() {
         if (isNull(jbxx_xm_e, "姓名")) {
@@ -1542,6 +1619,7 @@ public class Rycj_dengji extends Activity implements
                     }).show();
         } else {// 不存在
             helper = SqliteHelper.getInstance(Rycj_dengji.this);
+            // 以身份证+姓名为主键
             String insertSql = "insert into ryxxzcb(id,json,tjsj,glybm) values('"
                     + id + "','" + vo_sb.toString() + "','" + tjsj + "','" + userData.getU_id() + "')";
             helper.execSQL(insertSql, null);
@@ -1559,7 +1637,6 @@ public class Rycj_dengji extends Activity implements
             resetData();
 
         }
-
     }
 
     /**
@@ -1567,6 +1644,17 @@ public class Rycj_dengji extends Activity implements
      */
     private RyzcVo setRyzcVo() {
         RyzcVo vo = new RyzcVo();
+
+        //TODO 保存服务站名字和编号
+        //TODO 保存辖区名字 辖区编号 行政区划
+        //TODO 保存管理员名字 编号
+
+        String s = tvSsfwz.getText().toString().trim() + "," + jdxx_fwz_s.getCodeId();
+        String s1 = tvSxxq.getText().toString().trim() + "," + xqS.getCodeId() + "," + xzqhmap.get(xqS.getCodeId());
+        String s2 = tvGly.getText().toString().trim() + "," + glyS.getCodeId();
+        vo.setFwz(s);
+        vo.setXq(s1);
+        vo.setGly(s2);
         vo.setTbrq(tbrq.getText().toString().trim());
         /***************/
         /** 基本信息 **/
@@ -1578,7 +1666,8 @@ public class Rycj_dengji extends Activity implements
         vo.setJb_xb(jbxx_xb_t.getText().toString().trim());
         vo.setJb_hjdz(jbxx_hjdz_s.getCodeId());
         vo.setJb_hjxxdz(jbxx_hjxxdz_e.getText().toString().trim());
-        vo.setJb_sjycd(jbxx_sjycd_s.getCodeId());
+        String codeId = jbxx_sjycd_s.getCodeId();
+        vo.setJb_sjycd(codeId);
         vo.setJb_zzmm(jbxx_zzmm_s.getCodeId());
         vo.setJb_jzzj(jbxx_jzzj_s.getCodeId());
         vo.setJb_hjlb(jbxx_hjlb_s.getCodeId());
@@ -1641,13 +1730,88 @@ public class Rycj_dengji extends Activity implements
         /*************/
         vo.setTbr(preference.getString("login_admin_id", ""));
         vo.setGlybm(preference.getString("login_number", ""));
-        vo.setGlyxm(preference.getString("login_admin_name", ""));
+        String login_admin_name = preference.getString("login_admin_name", "");
+        vo.setGlyxm(login_admin_name);
+
+//        vo.setFwzMap(fwzmap);
+//        vo.setXqMap(xqmap);
+//        vo.setGlyMap(glyMap);
         return vo;
     }
 
+    private void cxXqAndGly(String id) {
+        //查询辖区
+        String json = "{'id':'" + id + "'}";
+        cxXqAndGlyCallBack.showDialog("请求中...");
+        HttpRequest.POST(Rycj_dengji.this, HttpRequest.SSXQCX, json, cxXqAndGlyCallBack);
+        //查询管理员
+        GlyCode glyCode = new GlyCode();
+        glyCode.setSsfwzbh(id);
+        Gson gson = new GsonBuilder().create();
+        HttpRequest.POST(Rycj_dengji.this, HttpRequest.GLY, gson.toJson(glyCode), glycx);
+
+    }
+
+    //所属辖区
+    private HttpCallBack<String> cxXqAndGlyCallBack = new HttpCallBack<String>(Rycj_dengji.this) {
+        @Override
+        public void onSuccess(String result) {
+            super.onSuccess(result);
+
+            if (jsonResult.getReturnCode() == 200) {
+                xqmap = new LinkedHashMap<String, String>();
+                xzqhmap = new LinkedHashMap<String, String>();
+                ArrayList<XqCode> xqData = gson.fromJson(gson.toJson(jsonResult.getReturnData()), new TypeToken<ArrayList<XqCode>>() {
+                }.getType());
+                for (int i = 0; i < xqData.size(); i++) {
+                    xqmap.put(xqData.get(i).getId(), xqData.get(i).getName());
+                    xzqhmap.put(xqData.get(i).getId(), xqData.get(i).getXzqh());
+                }
+                xqS = new SelectViewAndHandlerAndMsg(Rycj_dengji.this, "所属辖区", xqmap, tvSxxq, handler, 11, xqData.get(0).getId());
+
+            } else {
+                showToast(Rycj_dengji.this, jsonResult.getReturnMsg());
+            }
+        }
+    };
+
+    //管理员
+    private HttpCallBack<String> glycx = new HttpCallBack<String>(Rycj_dengji.this) {
+        private String glybmMR;
+
+        @Override
+        public void onSuccess(String result) {
+            super.onSuccess(result);
+            if (jsonResult.getReturnCode() == 200) {
+                String str = gson.toJson(jsonResult.getReturnData());
+                glyMap = new LinkedHashMap<String, String>();
+                try {
+                    JSONArray array = new JSONArray(str);
+                    for (int i = 0; i < array.length(); i++) {
+                        if (i == 0) {
+                            JSONObject jsonObject = array.getJSONObject(i);
+                            //第一个显示
+                            glybmMR = jsonObject.getString("glybm");
+                        }
+                        JSONObject jsonObject = array.getJSONObject(i);
+                        String glybm = jsonObject.getString("glybm");
+                        String glyxm = jsonObject.getString("glyxm");
+                        glyMap.put(glybm, glyxm);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                glyS = new SelectViewAndHandlerAndMsg(Rycj_dengji.this, "管理员", glyMap, tvGly, handler, 11, glybmMR);
+
+            } else {
+                showToast(Rycj_dengji.this, jsonResult.getReturnMsg());
+            }
+        }
+    };
 
     /**
      * 初始化界面数据及所有select框
+     * q 暂存为0  正常受理为1
      */
     private void init() {
         tbrq.setText(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
@@ -1661,6 +1825,17 @@ public class Rycj_dengji extends Activity implements
         shifouMap.put("", "请选择");
         shifouMap.put("1", "是");
         shifouMap.put("0", "否");
+
+        ArrayList<CodeTable> fwz = userData.getFwz();
+        fwzmap = new LinkedHashMap<String, String>();
+        for (int i = 0; i < fwz.size(); i++) {
+            fwzmap.put(fwz.get(i).getId(), fwz.get(i).getName());
+        }
+        String id = fwz.get(0).getId();
+        jdxx_fwz_s = new SelectViewAndHandlerAndMsg(this, "所属服务站", fwzmap, tvSsfwz, handler, 56, id);
+//        cxXqAndGly(id);
+
+
         jbxx_csd_s = new SelectViewAndHandlerAndMsg(this, "出生地",
                 getMap("SJCJ_D_CSD"), jbxx_csd_t, handler, 11, "02");
         jbxx_sjycd_s = new SelectViewAndHandlerAndMsg(this, "受教育程度",
@@ -1728,6 +1903,7 @@ public class Rycj_dengji extends Activity implements
         }
     }
 
+
     @Override
     protected void onDestroy() {
         readCardControler.close();
@@ -1740,6 +1916,11 @@ public class Rycj_dengji extends Activity implements
      */
     private void findView() {
         userData = StaticObject.getUserData(Rycj_dengji.this);
+
+        tvSsfwz = (TextView) findViewById(R.id.dengji_tv_date_ssfwz);
+        tvSxxq = (TextView) findViewById(R.id.dengji_tv_date_sxxq);
+        tvGly = (TextView) findViewById(R.id.dengji_tv_date_gly);
+
         jbxx_t = (TextView) findViewById(R.id.dengji_title_jibenxinxi);
         jzxx_t = (TextView) findViewById(R.id.dengji_title_juzhuxinxi);
         jyxx_t = (TextView) findViewById(R.id.dengji_title_jiuyeshebao);

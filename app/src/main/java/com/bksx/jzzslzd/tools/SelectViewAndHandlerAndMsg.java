@@ -7,7 +7,9 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * 单选框对象
@@ -24,8 +26,9 @@ public class SelectViewAndHandlerAndMsg {
 	private Handler handler;
 	private int what;
 	private String title;
+    private String value;
 
-	/**
+    /**
 	 * 初始化
 	 * 
 	 * @param context
@@ -55,6 +58,7 @@ public class SelectViewAndHandlerAndMsg {
 		this.view.setOnClickListener(listener);
 		if (cd_id != null) {
 			this.setCodeId(cd_id);
+
 		}
 
 	}
@@ -83,6 +87,7 @@ public class SelectViewAndHandlerAndMsg {
 				.setItems(values, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
+                        value = values[which];
 						view.setText(values[which]);
 						handler.sendEmptyMessage(what);
 					}
@@ -126,7 +131,15 @@ public class SelectViewAndHandlerAndMsg {
 			values[i] = this.map.get(key);
 			i++;
 		}
-
 	}
-
+    public String getKey(){
+        String key="";
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            if(value.equals(entry.getValue())){
+                key=entry.getKey();
+                continue;
+            }
+        }
+        return key;
+    }
 }

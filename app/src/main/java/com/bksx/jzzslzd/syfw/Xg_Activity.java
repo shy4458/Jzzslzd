@@ -141,7 +141,6 @@ public class Xg_Activity extends Activity {
 			StaticObject.showToast(Xg_Activity.this, "请填写出租平米数!");
 			return false;
 		}
-
 		if (rent == null || "".equals(rent)) {
 			StaticObject.showToast(Xg_Activity.this, "请填写租金!");
 			return false;
@@ -256,7 +255,6 @@ public class Xg_Activity extends Activity {
 
 						textView.setText(year + "-" + (month + 1) + "-"
 								+ dayOfMonth);
-
 					}
 				};
 
@@ -273,6 +271,7 @@ public class Xg_Activity extends Activity {
 	/**
 	 * 初始化对象
 	 */
+
 	private void initObject() {
 		fwxg_back = (ImageButton) findViewById(R.id.fwxg_back);
 		fwxg_reset = (Button) findViewById(R.id.fwxg_reset);
@@ -288,12 +287,12 @@ public class Xg_Activity extends Activity {
 		fwxg_czAction = (TextView) findViewById(R.id.textView_fwxg_czAction);
 		fwxg_czCatagory = (TextView) findViewById(R.id.textView_fwxg_czCatagory);
 		fwxg_zujin = (TextView) findViewById(R.id.textView_fwxg_rent);
-
 	}
 
 	/**
 	 * 获取数据
 	 */
+
 	private void getData() {
 		if (checkOut()) {
 			dialog = StaticObject.showDialog(Xg_Activity.this, "数据修改中....");

@@ -16,7 +16,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
 
-
 /**
  *
  */
@@ -28,6 +27,7 @@ public class HttpRequest {
     public static final String FWLR = "/fw/fwlr";//房屋录入
     public static final String SSXQCX = "/login/getSsxq";//所属辖区查询
     public static final String DJKSL = "/rycj/djksl";//登记卡受理
+    public static final String GLY = "/login/cxgly";//查询管理员
     private HttpURLConnection urlConnection;
     private URL url;
 

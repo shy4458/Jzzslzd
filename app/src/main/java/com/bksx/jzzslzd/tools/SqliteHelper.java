@@ -19,6 +19,7 @@ import java.io.InputStream;
 /**
  * 数据库工具类(存放暂存数据，不能更新，否则数据将消失)
  * 暂存数据包括：人员暂存，地址暂存,手机签到,工作提醒
+ *
  * @author Y_Jie
  * 
  */
@@ -94,7 +95,6 @@ public class SqliteHelper {
 			// 结束事务
 			helper.database.endTransaction();
 		}
-
 	}
 
 	/**
@@ -121,7 +121,6 @@ public class SqliteHelper {
 					msg.obj = "数据包" + index + "写入中...";
 					handler.sendMessage(msg);
 				}
-
 			}
 
 			helper.database.setTransactionSuccessful();
@@ -131,7 +130,6 @@ public class SqliteHelper {
 			// 结束事务
 			helper.database.endTransaction();
 		}
-
 	}
 
 	/**

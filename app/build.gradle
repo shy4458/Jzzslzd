@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 17
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 26
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.bksx.jzzslzd"
         minSdkVersion 14
-        targetSdkVersion 17
+        targetSdkVersion 26
     }
 
     buildTypes {
@@ -19,8 +19,8 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
-    compile 'com.google.code.gson:gson:2.1'
-    compile 'org.xutils:xutils:3.3.42'
-    compile 'com.google.guava:guava:18.0'
+    implementation 'com.google.code.gson:gson:2.1'
+    implementation 'org.xutils:xutils:3.3.42'
+    implementation 'com.google.guava:guava:18.0'
+    implementation 'com.android.support:support-v4:26.0.0'
 }

@@ -25,6 +25,7 @@ public class Fwxx {
     private String[][] fwxx;//房屋查询结果
     private String fwsl;//房屋数量
 
+
     public String getGlybm() {
         return glybm;
     }

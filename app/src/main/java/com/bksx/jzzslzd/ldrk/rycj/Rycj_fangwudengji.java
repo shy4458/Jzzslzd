@@ -15,6 +15,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bksx.jzzslzd.R;
+import com.bksx.jzzslzd.bean.Gly;
+import com.bksx.jzzslzd.bean.GlyCode;
 import com.bksx.jzzslzd.bo.CodeTable;
 import com.bksx.jzzslzd.bo.Fwxx;
 import com.bksx.jzzslzd.bo.UserLogin;
@@ -26,16 +28,22 @@ import com.bksx.jzzslzd.tools.FormCheck;
 import com.bksx.jzzslzd.tools.SelectViewAndHandlerAndMsg;
 import com.bksx.jzzslzd.tools.SqliteCodeTable;
 import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.bksx.jzzslzd.common.StaticObject.showToast;
 
-/**
+/**房屋登記
  * Created by user on 2017/8/9.
  */
 
@@ -57,17 +65,26 @@ public class Rycj_fangwudengji extends Activity {
                     String id = fwdj_ssfwz_s.getCodeId();
                     ssxqcx(id);
                     break;
+
             }
         }
     };
+
+
     private LinkedHashMap<String, String> xzqhmap;
+    private TextView fwdj_gly;
+    private SelectViewAndHandlerAndMsg fwdj_gly_s;
 
     public void ssxqcx(String id) {
         String json = "{'id':'" + id + "'}";
         ssxqcx.showDialog("请求中...");
         HttpRequest.POST(Rycj_fangwudengji.this, HttpRequest.SSXQCX, json, ssxqcx);
-    }
 
+        GlyCode glyCode = new GlyCode();
+        glyCode.setSsfwzbh(id);
+        Gson gson = new GsonBuilder().create();
+        HttpRequest.POST(Rycj_fangwudengji.this, HttpRequest.GLY,gson.toJson(glyCode), glycx);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,8 +154,6 @@ public class Rycj_fangwudengji extends Activity {
         return true;
     }
 
-    ;
-
     private boolean check() {
         if (isNull(fwdj_fwlx_s, "房屋类型")) {
             return false;
@@ -200,13 +215,13 @@ public class Rycj_fangwudengji extends Activity {
         fwxx.setFzsfzhm(fwdj_fzsfzh_e.getText().toString().trim());
         fwxx.setFzxzdxxdz(fwdj_fzxzdz_e.getText().toString().trim());
         fwxx.setFzlxdh(fwdj_fzlxdh_e.getText().toString().trim());
+        fwxx.setGlybm(fwdj_gly_s.getCodeId());
         String json = new GsonBuilder().create().toJson(fwxx);
         fwlr.showDialog("请求中...");
         HttpRequest.POST(Rycj_fangwudengji.this, HttpRequest.FWLR, json, fwlr);
 
-
     }
-
+    //所属辖区
     private HttpCallBack<String> ssxqcx = new HttpCallBack<String>(Rycj_fangwudengji.this) {
         @Override
         public void onSuccess(String result) {
@@ -220,13 +235,45 @@ public class Rycj_fangwudengji extends Activity {
                     xqmap.put(xqData.get(i).getId(), xqData.get(i).getName());
                     xzqhmap.put(xqData.get(i).getId(), xqData.get(i).getXzqh());
                 }
-                fwdj_ssxq_s = new SelectViewAndHandlerAndMsg(Rycj_fangwudengji.this, "所属辖区", xqmap, fwdj_ssxq_t, handler, 11, xqData.get(0).getId());
+                fwdj_ssxq_s = new SelectViewAndHandlerAndMsg(Rycj_fangwudengji.this, "所属辖区", xqmap, fwdj_ssxq_t, handler, 56, xqData.get(0).getId());
             } else {
                 showToast(Rycj_fangwudengji.this, jsonResult.getReturnMsg());
             }
-
         }
     };
+
+    //管理员
+    private HttpCallBack<String> glycx = new HttpCallBack<String>(Rycj_fangwudengji.this) {
+        private String glybmMR;
+        @Override
+        public void onSuccess(String result) {
+            super.onSuccess(result);
+            if (jsonResult.getReturnCode() == 200) {
+                String str = gson.toJson(jsonResult.getReturnData());
+                LinkedHashMap<String, String> glyMap = new LinkedHashMap<String, String>();
+                try {
+                    JSONArray array = new JSONArray(str);
+                    for (int i = 0; i < array.length(); i++) {
+                        if (i == 0){
+                            JSONObject jsonObject = array.getJSONObject(i);
+                            //第一个显示
+                            glybmMR = jsonObject.getString("glybm");
+                        }
+                        JSONObject jsonObject = array.getJSONObject(i);
+                        String glybm = jsonObject.getString("glybm");
+                        String glyxm = jsonObject.getString("glyxm");
+                        glyMap.put(glybm,glyxm);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                fwdj_gly_s = new SelectViewAndHandlerAndMsg(Rycj_fangwudengji.this, "管理员", glyMap, fwdj_gly, handler, 11,glybmMR);
+            } else {
+                showToast(Rycj_fangwudengji.this, jsonResult.getReturnMsg());
+            }
+        }
+    };
+
 
     private void init() {
         UserLogin userData = StaticObject.getUserData(Rycj_fangwudengji.this);
@@ -239,6 +286,7 @@ public class Rycj_fangwudengji extends Activity {
         fwdj_ssfwz_s = new SelectViewAndHandlerAndMsg(this, "所属服务站", fwzmap, fwdj_ssfwz_t, handler, 12, id);
         ssxqcx(id);
         fwdj_fwlx_s = new SelectViewAndHandlerAndMsg(this, "房屋类型", getMap("SJCJ_D_ZSLX"), fwdj_fwlx_t, handler, 11, "02");
+
     }
 
     private void findView() {
@@ -246,7 +294,7 @@ public class Rycj_fangwudengji extends Activity {
         fwdj_ssxq_t = (TextView) findViewById(R.id.fangwudengji_select_suoshuxiaqu);
         fwdj_fwlx_t = (TextView) findViewById(R.id.fangwudengji_select_fangwuleixing);
         fwdj_fwdz_e = (EditText) findViewById(R.id.fangwudengji_et_fangwudizhi);
-
+        fwdj_gly = (TextView) findViewById(R.id.fangwudengji_select_guanliyuan);
         fwdj_fzxm_e = (EditText) findViewById(R.id.fangwudengji_et_fangzhuxingming);
         fwdj_fzsfzh_e = (EditText) findViewById(R.id.fangwudengji_et_fangzhushenfenzhenghao);
         fwdj_fzxzdz_e = (EditText) findViewById(R.id.fangwudengji_et_fangzhuxianzhudizhi);

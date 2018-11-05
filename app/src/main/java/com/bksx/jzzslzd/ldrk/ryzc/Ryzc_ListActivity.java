@@ -1,5 +1,6 @@
 package com.bksx.jzzslzd.ldrk.ryzc;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -44,6 +45,9 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * 人员暂存
+ */
 public class Ryzc_ListActivity extends Activity implements OnScrollListener {
 
 	ArrayList<Map<String, String>> list;
@@ -70,6 +74,8 @@ public class Ryzc_ListActivity extends Activity implements OnScrollListener {
 	protected String result, result1, result2, date, id;
 	private SharedPreferences preference;
 	private UserLogin userData;
+
+	@SuppressLint("HandlerLeak")
 	private Handler handler = new Handler() {
 		@SuppressWarnings("unchecked")
 		public void handleMessage(android.os.Message msg) {
@@ -284,6 +290,7 @@ public class Ryzc_ListActivity extends Activity implements OnScrollListener {
 				Intent intent = new Intent(Ryzc_ListActivity.this,
 						Rycj_dengji.class);
 				intent.setFlags(0);// 暂存0，
+				intent.putExtra("state",true);//true 为缓存
 				intent.putExtra("ryzcData", new Gson().toJson(vos1.get(arg2)));
 				startActivity(intent);
 			}

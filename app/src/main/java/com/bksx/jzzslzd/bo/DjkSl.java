@@ -242,6 +242,7 @@ public class DjkSl {
 
     private String rzf_sspcsdm;//所属派出所
     private String rzf_sspcsmc;//所属派出所名称
+    //TODO shy
     private String rzf_fwzbh;//服务站编号
     private String rzf_ssxqbh;//所属辖区编号
 
@@ -265,6 +266,16 @@ public class DjkSl {
     private String fxdw; //发现单位编码
     private String fxdwlx; //发现单位类型
     private String fxpcsbm; //发现派出所编码
+
+    private String glybm;
+
+    public String getGlybm() {
+        return glybm;
+    }
+
+    public void setGlybm(String glybm) {
+        this.glybm = glybm;
+    }
 
     public String getFxrid() {
         return fxrid;

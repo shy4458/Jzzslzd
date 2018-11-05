@@ -3,9 +3,14 @@ buildscript {
     repositories {
         jcenter()
        // maven {url 'http://130.10.8.208/repository/bksx-maven/'}
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.2.1'
     }
 }
 
@@ -13,5 +18,9 @@ allprojects {
     repositories {
         jcenter()
 
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }

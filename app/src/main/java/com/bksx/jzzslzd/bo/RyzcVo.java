@@ -2,6 +2,9 @@ package com.bksx.jzzslzd.bo;
 
 import com.bksx.jzzslzd.tools.FormCheck;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+
 public class RyzcVo {
 	/**
 	 * 人员编号(补采用)
@@ -287,11 +290,72 @@ public class RyzcVo {
 	private String tbr;//填表人
 	private String glybm;//管理员编码
 	private String glyxm;//管理员姓名
-	
-	
-	
+
+	private String fwz;
+	private String xq;
+	private String gly;
+
+	public String getFwz() {
+		return fwz;
+	}
+
+	public void setFwz(String fwz) {
+		this.fwz = fwz;
+	}
+
+	public String getXq() {
+		return xq;
+	}
+
+	public void setXq(String xq) {
+		this.xq = xq;
+	}
+
+	public String getGly() {
+		return gly;
+	}
+
+	public void setGly(String gly) {
+		this.gly = gly;
+	}
+
+	//服务站
+	private LinkedHashMap<String,String> fwzMap;
+	//辖区
+	private LinkedHashMap<String,String> xqMap;
+	//管理员
+	private LinkedHashMap<String,String> glyMap;
+
+	public LinkedHashMap<String, String> getFwzMap() {
+		return fwzMap;
+	}
+
+	public void setFwzMap(LinkedHashMap<String, String> fwzMap) {
+		this.fwzMap = fwzMap;
+	}
+
+	public LinkedHashMap<String, String> getXqMap() {
+		return xqMap;
+	}
+
+	public void setXqMap(LinkedHashMap<String, String> xqMap) {
+		this.xqMap = xqMap;
+	}
+
+	public LinkedHashMap<String, String> getGlyMap() {
+		return glyMap;
+	}
+
+	public void setGlyMap(LinkedHashMap<String, String> glyMap) {
+		this.glyMap = glyMap;
+	}
+
+
+
+
 
 	public RyzcVo() {
+
 	}
 
 	public RyzcVo(String[] data) {

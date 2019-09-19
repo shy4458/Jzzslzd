@@ -181,6 +181,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 Activity.MODE_PRIVATE);
     }
 
+
     private void showURLDialog() {
         View view = LayoutInflater.from(this).inflate(R.layout.login_imsi_dialog, null);
         final EditText ip_address = ((EditText) view.findViewById(R.id.login_ip_edit));

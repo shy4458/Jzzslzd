@@ -98,7 +98,6 @@ public class Rycj_fangwudengji extends Activity {
                 if (check()) {
                     fwdj();
                 }
-
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +130,6 @@ public class Rycj_fangwudengji extends Activity {
             } else {
                 showToast(Rycj_fangwudengji.this, jsonResult.getReturnMsg());
             }
-
         }
     };
 
@@ -365,7 +363,7 @@ public class Rycj_fangwudengji extends Activity {
      */
     private boolean checkPhone() {
         String str = fwdj_fzlxdh_e.getText().toString().trim();
-        String regEx = "^((13[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\\d{8}$";
+        String regEx = "^((13[0-9])|(14[0-9])|(15[0-9])|(16[0-9])|(17[0-9])|(18[0-9])|(19[0-9]))\\d{8}$";
         Pattern pattern = Pattern.compile(regEx);
         Matcher matcher = pattern.matcher(str);
         boolean rs = matcher.matches();

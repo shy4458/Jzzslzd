@@ -569,7 +569,6 @@ public class Rycj_dengji extends Activity implements
             StaticObject.showToast(Rycj_dengji.this, "请输入正确的手机号码");
             return false;
         }
-
         return true;
     }
 
@@ -578,7 +577,7 @@ public class Rycj_dengji extends Activity implements
      */
     private boolean checkPhone() {
         String str = jbxx_lxdh_e.getText().toString().trim();
-        String regEx = "^((13[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\\d{8}$";
+        String regEx = "^((13[0-9])|(14[0-9])|(15[0-9])|(16[0-9])|(17[0-9])|(18[0-9])|(19[0-9]))\\d{8}$";
         Pattern pattern = Pattern.compile(regEx);
         Matcher matcher = pattern.matcher(str);
         boolean rs = matcher.matches();
@@ -697,7 +696,7 @@ public class Rycj_dengji extends Activity implements
             if (isNull(jyxx_xxmc_e, "学校名称")) {
                 return false;
             }
-            if (isNull(jyxx_xxmc_e, "学校所在地")) {
+            if (isNull(jyxx_xxszd_e, "学校所在地")) {
                 return false;
             }
         } else if ("99".equals(jyxx_mqzk_s.getCodeId())) {// 其他
@@ -1091,10 +1090,22 @@ public class Rycj_dengji extends Activity implements
         fwz = vo.getFwz();
         xq = vo.getXq();
         gly = vo.getGly();
+        if (fwz != null) {
+            tvSsfwz.setText(fwz.split(",")[0]);
+        } else {
+            tvSsfwz.setText("");
+        }
+        if (xq != null) {
+            tvSxxq.setText(xq.split(",")[0]);
+        } else {
+            tvSxxq.setText("");
+        }
+        if (gly != null) {
+            tvGly.setText(gly.split(",")[0]);
+        } else {
+            tvGly.setText("");
+        }
 
-        tvSsfwz.setText(fwz.split(",")[0]);
-        tvSxxq.setText(xq.split(",")[0]);
-        tvGly.setText(gly.split(",")[0]);
 //        fwzmap = vo.getFwzMap();
 //        xqmap = vo.getXqMap();
 //        glyMap = vo.getGlyMap();
@@ -1650,11 +1661,24 @@ public class Rycj_dengji extends Activity implements
         //TODO 保存管理员名字 编号
 
         String s = tvSsfwz.getText().toString().trim() + "," + jdxx_fwz_s.getCodeId();
-        String s1 = tvSxxq.getText().toString().trim() + "," + xqS.getCodeId() + "," + xzqhmap.get(xqS.getCodeId());
-        String s2 = tvGly.getText().toString().trim() + "," + glyS.getCodeId();
+        String s1;
+        if (xqS != null) {
+            s1 = tvSxxq.getText().toString().trim() + "," + xqS.getCodeId() + "," + xzqhmap.get(xqS.getCodeId());
+        } else {
+            s1 = tvSxxq.getText().toString().trim() + " , , ";
+        }
+
+        String s2;
+        if (glyS != null) {
+            s2 = tvGly.getText().toString().trim() + "," + glyS.getCodeId();
+        } else {
+            s2 = tvGly.getText().toString().trim() + ", ";
+        }
+
         vo.setFwz(s);
         vo.setXq(s1);
         vo.setGly(s2);
+
         vo.setTbrq(tbrq.getText().toString().trim());
         /***************/
         /** 基本信息 **/
@@ -1920,7 +1944,6 @@ public class Rycj_dengji extends Activity implements
         tvSsfwz = (TextView) findViewById(R.id.dengji_tv_date_ssfwz);
         tvSxxq = (TextView) findViewById(R.id.dengji_tv_date_sxxq);
         tvGly = (TextView) findViewById(R.id.dengji_tv_date_gly);
-
         jbxx_t = (TextView) findViewById(R.id.dengji_title_jibenxinxi);
         jzxx_t = (TextView) findViewById(R.id.dengji_title_juzhuxinxi);
         jyxx_t = (TextView) findViewById(R.id.dengji_title_jiuyeshebao);
